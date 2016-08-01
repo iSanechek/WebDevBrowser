@@ -248,7 +248,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                                 } catch (Exception ex) {
                                     AppLog.e(getActivity(), ex);//записывается в лог проги как ошибка
                                 }
-                                break
+                                break;
                         }
                     }
                 })
