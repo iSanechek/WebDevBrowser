@@ -38,9 +38,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.afollestad.material-dialogs:core:0.8.6.2'
     compile 'com.afollestad.material-dialogs:commons:0.8.6.2'
-    compile('com.mikepenz.materialdrawer:library:0.9.5@aar') {
-        transitive = true
-    }
     compile 'com.obsez.android.lib.filechooser:filechooser:1.1.2'
     compile 'ch.acra:acra:4.9.0'
     compile 'com.android.support:support-v4:24.1.1'

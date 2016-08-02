@@ -5,10 +5,10 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
+
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 
 import org.softeg.morphinebrowser.AppLog;
@@ -92,8 +92,8 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     }
 
     public void setSupportProgressBarIndeterminateVisibility(boolean b) {
-        if (((ActionBarActivity)getActivity()) != null)
-            ((ActionBarActivity)getActivity()) .setSupportProgressBarIndeterminateVisibility(b);
+        if (((AppCompatActivity)getActivity()) != null)
+            ((AppCompatActivity)getActivity()).setSupportProgressBarIndeterminateVisibility(b);
     }
 
     @Override

@@ -15,4 +15,10 @@
     <color name="material_drawer_contrast_text">#000</color>
     <color name="material_drawer_divider">#555555</color>
     <color name="material_drawer_selected">#262626</color>
+
+
+    <!---->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#82B1FF</color>
 </resources>

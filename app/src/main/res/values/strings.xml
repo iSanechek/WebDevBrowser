@@ -39,5 +39,6 @@
     <string name="fi_html">ХТМЛ</string>
     <string name="export_html">Экспорт HTML</string>
     <string name="ex_sd">Проверьте доступность sd!</string>
+    <string name="title_activity_main2">Main2Activity</string>
 
 </resources>
