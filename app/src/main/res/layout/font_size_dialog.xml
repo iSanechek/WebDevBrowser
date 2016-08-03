@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="24dp"
-    android:paddingRight="24dp">
+    android:orientation="vertical">
 
     <SeekBar
         android:id="@+id/value_seekbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
         android:max="69"/>
-    <EditText
-        android:id="@+id/value_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:inputType="number"
-        android:text="0" />
+
     <LinearLayout
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,14 +27,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="-"
-            android:id="@+id/button_minus" />
+            android:background="@null"
+            android:id="@+id/button_minus"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/value_text"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:inputType="number"
+            android:text="0"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="+"
-            android:id="@+id/button_plus" />
+            android:background="@null"
+            android:id="@+id/button_plus"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 
 

@@ -1,13 +1,15 @@
 package org.softeg.morphinebrowser.pageviewcontrol;
 
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.ContextMenu;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.SeekBar;
@@ -36,6 +38,7 @@ public abstract class PageFragment extends PageViewFragment implements
 
     protected HtmlOutManager mHtmlOutManager;
     protected int mScrollY = 0;
+    protected BottomSheetBehavior mDialogBehavior;
 
     protected void initHtmlOutManager() {
         mHtmlOutManager = new HtmlOutManager(this);
@@ -103,6 +106,11 @@ public abstract class PageFragment extends PageViewFragment implements
 
     protected void showFontSizeDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
+        changeText(getString(R.string.fontsize));
+
+        if (AppPreferences.isFirstStart()) {
+            showWarningDialog();
+        }
 
         assert v != null;
         final SeekBar seekBar = (SeekBar) v.findViewById(R.id.value_seekbar);
@@ -170,28 +178,23 @@ public abstract class PageFragment extends PageViewFragment implements
 
             }
         });
-        new MaterialDialog.Builder(getActivity())
-                .title(R.string.fontsize)
-                .customView(v, false)
-                .positiveText(R.string.ok)
-                .negativeText(R.string.cancel)
-                .callback(new MaterialDialog.ButtonCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-                        AppPreferences.setWebViewFontSize(seekBar.getProgress());
-                        super.onPositive(dialog);
-                    }
 
-                    @Override
-                    public void onNegative(MaterialDialog dialog) {
-                        getWebView().getSettings().setDefaultFontSize(AppPreferences.getWebViewFontSize());
-                        super.onNegative(dialog);
-                    }
-                })
-                .show();
+        BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
+        dialog.setContentView(v);
+        dialog.show();
+        mDialogBehavior = BottomSheetBehavior.from((View) v.getParent());
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                mDialogBehavior = null;
+                clearText();
+                AppPreferences.setWebViewFontSize(seekBar.getProgress());
+            }
+        });
+
         editText.selectAll();
         editText.requestFocus();
-        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+//        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
     protected void showSelectStyleDialog() {
@@ -283,5 +286,26 @@ public abstract class PageFragment extends PageViewFragment implements
                     }
                 })
                 .show();
+    }
+
+    protected void showWarningDialog() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                new MaterialDialog.Builder(getActivity())
+                        .title("Предупреждение")
+                        .content("Для закрытия диалога регулеровки свайпните вниз")
+                        .positiveText("Я понял(а)")
+                        .canceledOnTouchOutside(false)
+                        .callback(new MaterialDialog.ButtonCallback() {
+                            @Override
+                            public void onPositive(MaterialDialog dialog) {
+                                super.onPositive(dialog);
+                                AppPreferences.firstStartDone();
+                            }
+                        }).show();
+            }
+        }, 1000);
     }
 }

@@ -12,10 +12,10 @@ import org.softeg.morphinebrowser.common.IntentUtils;
 /*
  * Created by slinkin on 02.10.2014.
  */
-public class AppWebViewClient extends WebViewClient {
+class AppWebViewClient extends WebViewClient {
     private IWebViewClientListener listener;
 
-    public AppWebViewClient(IWebViewClientListener listener) {
+    AppWebViewClient(IWebViewClientListener listener) {
         super();
         this.listener = listener;
     }

@@ -27,4 +27,14 @@ public class AppPreferences {
         prefs.edit().putInt("WebView.CacheMode", value).apply();
     }
 
+    public static void firstStartDone() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
+        prefs.edit().putBoolean("First.Start", false).apply();
+    }
+
+    public static boolean isFirstStart() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
+        return prefs.getBoolean("First.Start", true);
+    }
+
 }

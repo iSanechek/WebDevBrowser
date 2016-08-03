@@ -6,11 +6,15 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import org.softeg.morphinebrowser.controls.AppWebView;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         // Инициализирую Toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        setSupportProgressBarIndeterminateVisibility(true);
         createFragment(getIntent() != null ? getIntent().getData() : null);
     }
 
@@ -49,5 +49,21 @@ public class MainActivity extends AppCompatActivity {
         }else {
             super.onBackPressed();
         }
+    }
+
+    public void showProgress(boolean show) {
+        if (show) {
+            toolbar.setTitle("Загрузка...");
+        } else {
+            clearTitle();
+        }
+    }
+
+    public void changeTitle(String text) {
+        toolbar.setTitle(text);
+    }
+
+    public void clearTitle() {
+        toolbar.setTitle(R.string.app_name);
     }
 }

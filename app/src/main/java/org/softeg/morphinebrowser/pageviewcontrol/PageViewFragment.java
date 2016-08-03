@@ -5,14 +5,13 @@ import android.app.ActionBar;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
+import org.softeg.morphinebrowser.MainActivity;
 import org.softeg.morphinebrowser.R;
 import org.softeg.morphinebrowser.controls.AppWebView;
 import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.AppWebChromeClient;
@@ -92,8 +91,19 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     }
 
     public void setSupportProgressBarIndeterminateVisibility(boolean b) {
-        if (((AppCompatActivity)getActivity()) != null)
-            ((AppCompatActivity)getActivity()).setSupportProgressBarIndeterminateVisibility(b);
+        if (getActivity() != null)
+            ((MainActivity)getActivity()).showProgress(b);
+
+    }
+
+    protected void changeText(String text) {
+        if (getActivity() != null)
+            ((MainActivity)getActivity()).changeTitle(text);
+    }
+
+    public void clearText() {
+        if (getActivity() != null)
+            ((MainActivity)getActivity()).clearTitle();
     }
 
     @Override
@@ -149,6 +159,4 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         });
 
     }
-
-
 }

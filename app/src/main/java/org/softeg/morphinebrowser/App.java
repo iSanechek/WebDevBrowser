@@ -8,6 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Created by slartus on 25.10.2014.
  */
 public class App extends Application {
+
     private static App INSTANCE = null;
 
     public App() {

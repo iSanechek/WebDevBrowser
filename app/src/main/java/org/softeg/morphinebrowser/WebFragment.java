@@ -2,7 +2,7 @@ package org.softeg.morphinebrowser;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Point;
@@ -10,14 +10,16 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Display;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.Toast;
@@ -41,6 +43,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     }
 
     private String mUrl;
+//    private BottomSheetBehavior mDialogBehavior;
 
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
@@ -102,8 +105,13 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         return super.onOptionsItemSelected(item);
     }
 
-    protected void showWidthDialog() {
+    private void showWidthDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
+        changeText(getString(R.string.scr_w));
+
+        if (AppPreferences.isFirstStart()) {
+            showWarningDialog();
+        }
 
         assert v != null;
 
@@ -196,26 +204,49 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
 
             }
         });
-        new MaterialDialog.Builder(getActivity())
-                .title(R.string.scr_w)
-                .customView(v, false)
-                .positiveText(R.string.ok)
-                .negativeText(R.string.cancel)
-                .show();
+
+        BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
+        dialog.setContentView(v);
+        mDialogBehavior = BottomSheetBehavior.from((View) v.getParent());
+        dialog.show();
+        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialogInterface) {
+                mDialogBehavior = null;
+                clearText();
+            }
+        });
         editText.selectAll();
         editText.requestFocus();
-        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
-    protected void showAboutDialog() {
+    private void showAboutDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.about_dialog, null);
-
 
         new MaterialDialog.Builder(getActivity())
                 .title(R.string.about_title)
                 .customView(v, true)
                 .positiveText(R.string.ok)
                 .show();
+    }
+
+    private void showNightModeDialog() {
+        new MaterialDialog.Builder(getActivity())
+                .title("Ночьной режим")
+                .items(R.array._night_mode)
+                .itemsCallback(new MaterialDialog.ListCallback() {
+                    @Override
+                    public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                        switch (which) {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }).show();
     }
 
     public static final int FILE_CHOOSER = 1; //инит
