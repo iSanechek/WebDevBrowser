@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,10 +11,10 @@ import android.view.ContextMenu;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
-import android.widget.SeekBar;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
 import org.softeg.morphinebrowser.R;
@@ -38,7 +37,6 @@ public abstract class PageFragment extends PageViewFragment implements
 
     protected HtmlOutManager mHtmlOutManager;
     protected int mScrollY = 0;
-    protected BottomSheetBehavior mDialogBehavior;
 
     protected void initHtmlOutManager() {
         mHtmlOutManager = new HtmlOutManager(this);
@@ -50,7 +48,6 @@ public abstract class PageFragment extends PageViewFragment implements
         super.onActivityCreated(savedInstanceState);
 
         initHtmlOutManager();
-
 
         if (savedInstanceState != null && savedInstanceState.containsKey(SCROLL_Y_KEY)) {
             mScrollY = savedInstanceState.getInt(SCROLL_Y_KEY);
@@ -113,18 +110,18 @@ public abstract class PageFragment extends PageViewFragment implements
         }
 
         assert v != null;
-        final SeekBar seekBar = (SeekBar) v.findViewById(R.id.value_seekbar);
-        seekBar.setProgress(AppPreferences.getWebViewFontSize());
+        final DiscreteSeekBar sb = (DiscreteSeekBar) v.findViewById(R.id.value_seek_bar);
+        sb.setProgress(AppPreferences.getWebViewFontSize());
         final EditText editText = (EditText) v.findViewById(R.id.value_text);
-        editText.setText((seekBar.getProgress() + 1) + "");
+        editText.setText((sb.getProgress()) + "");
 
         v.findViewById(R.id.button_minus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seekBar.getProgress() > 0) {
-                    int i = seekBar.getProgress() - 1;
+                if (sb.getProgress() > 0) {
+                    int i = sb.getProgress() - 1;
 
-                    seekBar.setProgress(i);
+                    sb.setProgress(i);
                     getWebView().getSettings().setDefaultFontSize(i + 1);
                     editText.setText((i + 1) + "");
                 }
@@ -133,10 +130,10 @@ public abstract class PageFragment extends PageViewFragment implements
         v.findViewById(R.id.button_plus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seekBar.getProgress() < seekBar.getMax()) {
-                    int i = seekBar.getProgress() + 1;
+                if (sb.getProgress() < sb.getMax()) {
+                    int i = sb.getProgress() + 1;
 
-                    seekBar.setProgress(i);
+                    sb.setProgress(i);
                     getWebView().getSettings().setDefaultFontSize(i + 1);
                     editText.setText((i + 1) + "");
                 }
@@ -151,7 +148,7 @@ public abstract class PageFragment extends PageViewFragment implements
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().equals("")) {
-                    seekBar.setProgress(Integer.valueOf(s.toString()) - 1);
+                    sb.setProgress(Integer.valueOf(s.toString()) - 1);
                     editText.setSelection(s.length());
                 }
             }
@@ -161,20 +158,21 @@ public abstract class PageFragment extends PageViewFragment implements
 
             }
         });
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        sb.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                getWebView().getSettings().setDefaultFontSize(i + 1);
-                editText.setText((i + 1) + "");
+            public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
+                getWebView().getSettings().setDefaultFontSize(value);
+                editText.setText((value) + "");
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
+            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
 
             }
         });
@@ -182,18 +180,18 @@ public abstract class PageFragment extends PageViewFragment implements
         BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
         dialog.setContentView(v);
         dialog.show();
-        mDialogBehavior = BottomSheetBehavior.from((View) v.getParent());
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                mDialogBehavior = null;
                 clearText();
-                AppPreferences.setWebViewFontSize(seekBar.getProgress());
+                AppPreferences.setWebViewFontSize(sb.getProgress());
             }
         });
 
         editText.selectAll();
         editText.requestFocus();
+
+        changeFontSize(sb.getProgress());
 //        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
@@ -306,6 +304,6 @@ public abstract class PageFragment extends PageViewFragment implements
                             }
                         }).show();
             }
-        }, 1000);
+        }, 500);
     }
 }

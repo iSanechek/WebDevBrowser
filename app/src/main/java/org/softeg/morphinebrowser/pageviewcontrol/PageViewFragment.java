@@ -2,7 +2,12 @@ package org.softeg.morphinebrowser.pageviewcontrol;
 
 
 import android.app.ActionBar;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -74,6 +79,23 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         registerForContextMenu(mWebView);
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        IntentFilter intentFilter = new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE");
+        getActivity().registerReceiver(mConnectivityChangeReceiver, intentFilter);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        if (mConnectivityChangeReceiver != null) getActivity().unregisterReceiver(mConnectivityChangeReceiver);
+    }
+
+    protected void changeFontSize(int size) {
+        mWebView.getSettings().setTextZoom(size);
     }
 
     public AppWebView getWebView() {
@@ -159,4 +181,14 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         });
 
     }
+
+    private final BroadcastReceiver mConnectivityChangeReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+            mWebView.setNetworkAvailable(isConnected);
+        }
+    };
 }

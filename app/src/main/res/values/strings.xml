@@ -16,7 +16,7 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="about_text">Разработчики\nАртём Слинкин (slartus)\nЕвгений Низамиев (Radiation15/RadiationX)\nАлександр Тайнюк (iSanechek)\n\nПомошник:\nАртём Жиганов (Snow Volf)\n\nOсобая благодарность:\nАлексей Шолохов (Morfij)</string>
+    <string name="about_text">Разработчики:\nАртём Слинкин (slartus)\nЕвгений Низамиев (RadiationX)\nАлександр Тайнюк (iSanechek)\n\nПомошник:\nАртём Жиганов (Snow Volf)\n\nOсобая благодарность:\nАлексей Шолохов (Морфий)</string>
     <string name="write_url">Ввести URL</string>
     <string name="refresh">Обновить</string>
     <string name="fontsize">Размер шрифта</string>

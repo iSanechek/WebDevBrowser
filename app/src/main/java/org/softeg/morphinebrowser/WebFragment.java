@@ -10,7 +10,6 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
@@ -19,13 +18,12 @@ import android.text.TextWatcher;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
+import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
 
 /*
@@ -43,7 +41,6 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     }
 
     private String mUrl;
-//    private BottomSheetBehavior mDialogBehavior;
 
     @Override
     public void onCreate(android.os.Bundle savedInstanceState) {
@@ -108,7 +105,6 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     private void showWidthDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
         changeText(getString(R.string.scr_w));
-
         if (AppPreferences.isFirstStart()) {
             showWarningDialog();
         }
@@ -121,22 +117,24 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         int screenWidth = size.x;
 
         int webViewWidth = getWebView().getMeasuredWidth();
-        final SeekBar seekBar = (SeekBar) v.findViewById(R.id.value_seekbar);
 
-        seekBar.setMax(screenWidth);
-        seekBar.setProgress(webViewWidth);
+
+        final DiscreteSeekBar sb = (DiscreteSeekBar) v.findViewById(R.id.value_seek_bar);
+
+        sb.setMax(screenWidth);
+        sb.setProgress(webViewWidth);
 
         final EditText editText = (EditText) v.findViewById(R.id.value_text);
-        editText.setText((seekBar.getProgress()) + "");
+        editText.setText((sb.getProgress()) + "");
 
 
         v.findViewById(R.id.button_minus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seekBar.getProgress() > 0) {
-                    int i = seekBar.getProgress() - 1;
+                if (sb.getProgress() > 0) {
+                    int i = sb.getProgress() - 1;
 
-                    seekBar.setProgress(i);
+                    sb.setProgress(i);
                     RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT);
                     rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
                     getWebView().setLayoutParams(rl_lp);
@@ -148,10 +146,10 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         v.findViewById(R.id.button_plus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (seekBar.getProgress() < seekBar.getMax()) {
-                    int i = seekBar.getProgress() + 1;
+                if (sb.getProgress() < sb.getMax()) {
+                    int i = sb.getProgress() + 1;
 
-                    seekBar.setProgress(i);
+                    sb.setProgress(i);
                     RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT);
                     rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
                     getWebView().setLayoutParams(rl_lp);
@@ -169,7 +167,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().equals("")) {
-                    seekBar.setProgress(Integer.valueOf(s.toString()));
+                    sb.setProgress(Integer.valueOf(s.toString()));
                     editText.setSelection(s.length());
                 }
             }
@@ -178,41 +176,38 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             public void afterTextChanged(Editable s) {
             }
         });
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+
+        sb.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
                 try {
-                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT);
+                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(value, RelativeLayout.LayoutParams.MATCH_PARENT);
                     rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
                     getWebView().setLayoutParams(rl_lp);
                     rl_lp = null;
-                    //getWebView().setLayoutParams(new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT));
-                    editText.setText((i) + "");
+                    editText.setText((value) + "");
                 } catch (Throwable ex) {
                     AppLog.e(getActivity(), ex);
                 }
+            }
+
+            @Override
+            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
 
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
 
             }
         });
 
         BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
         dialog.setContentView(v);
-        mDialogBehavior = BottomSheetBehavior.from((View) v.getParent());
         dialog.show();
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                mDialogBehavior = null;
                 clearText();
             }
         });

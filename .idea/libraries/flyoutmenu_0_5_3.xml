@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="flyoutmenu-0.5.3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/a908a5e30a38ce7847722c155af1e7c6f97054a4/flyoutmenu-0.5.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
