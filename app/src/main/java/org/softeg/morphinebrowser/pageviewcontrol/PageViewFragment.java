@@ -118,6 +118,12 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
     }
 
+    @Override
+    public void setPageTitle(String title) {
+        if (getActivity() != null)
+            ((MainActivity)getActivity()).changeTitle(title);
+    }
+
     protected void changeText(String text) {
         if (getActivity() != null)
             ((MainActivity)getActivity()).changeTitle(text);

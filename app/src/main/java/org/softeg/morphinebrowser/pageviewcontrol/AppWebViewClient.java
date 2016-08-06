@@ -2,6 +2,7 @@ package org.softeg.morphinebrowser.pageviewcontrol;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -32,6 +33,9 @@ class AppWebViewClient extends WebViewClient {
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         listener.setSupportProgressBarIndeterminateVisibility(false);
+        if (!TextUtils.isEmpty(view.getTitle())) {
+            listener.setPageTitle(view.getTitle());
+        }
     }
 /*
     @Override

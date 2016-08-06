@@ -11,6 +11,8 @@ import org.softeg.morphinebrowser.controls.AppWebView;
 public interface IWebViewClientListener {
     void setSupportProgressBarIndeterminateVisibility(boolean b);
 
+    void setPageTitle(String title);
+
     Context getContext();
 
     AppWebView getWebView();
