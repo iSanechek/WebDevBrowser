@@ -28,6 +28,7 @@ import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.AppWebChrome
 public class PageViewFragment extends Fragment implements View.OnClickListener, IWebViewClientListener {
     protected AppWebView mWebView;
     protected String globalUrl;
+    private String pageTitle = null;
 
     protected int getViewResourceId() {
         return R.layout.webview_fragment;
@@ -118,10 +119,16 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
     }
 
+    /**
+     * Нет времени объяснять - пишим пока(читать как навсегда) так.
+     * Понять и простить
+     */
     @Override
     public void setPageTitle(String title) {
-        if (getActivity() != null)
+        if (getActivity() != null) {
+            pageTitle = title;
             ((MainActivity)getActivity()).changeTitle(title);
+        }
     }
 
     protected void changeText(String text) {
@@ -131,7 +138,7 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
     public void clearText() {
         if (getActivity() != null)
-            ((MainActivity)getActivity()).clearTitle();
+            ((MainActivity)getActivity()).clearTitle(pageTitle);
     }
 
     @Override

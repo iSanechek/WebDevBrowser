@@ -51,19 +51,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Понять и простить
+     */
+
     public void showProgress(boolean show) {
-        if (show) {
+        if (show)
             toolbar.setTitle("Загрузка...");
-        } else {
-            clearTitle();
-        }
+        else
+            clearTitle(null);
     }
 
     public void changeTitle(String text) {
         toolbar.setTitle(text);
     }
 
-    public void clearTitle() {
-        toolbar.setTitle(R.string.app_name);
+    public void clearTitle(String title) {
+        if (title == null)
+            toolbar.setTitle(R.string.app_name);
+        else
+            toolbar.setTitle(title);
     }
 }
