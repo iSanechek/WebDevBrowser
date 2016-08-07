@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.softeg.morphinebrowser.controls.AppWebView;
 
@@ -15,16 +18,28 @@ import org.softeg.morphinebrowser.controls.AppWebView;
 public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
+    private TextView toolbar_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
 
+        Log.e("TEST", "onCreate");
+
         setContentView(R.layout.activity_main);
         // Инициализирую Toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        toolbar_title = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        clearTitle(null);
+        toolbar_title.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(MainActivity.this, toolbar_title.getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
         createFragment(getIntent() != null ? getIntent().getData() : null);
     }
 
@@ -57,19 +72,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void showProgress(boolean show) {
         if (show)
-            toolbar.setTitle("Загрузка...");
+            toolbar_title.setText("Загрузка...");
         else
             clearTitle(null);
     }
 
     public void changeTitle(String text) {
-        toolbar.setTitle(text);
+        toolbar_title.setText(text);
     }
 
     public void clearTitle(String title) {
         if (title == null)
-            toolbar.setTitle(R.string.app_name);
+            toolbar_title.setText(R.string.app_name);
         else
-            toolbar.setTitle(title);
+            toolbar_title.setText(title);
     }
 }

@@ -21,7 +21,6 @@
             android:layout_marginTop="4dp"
             android:layout_marginLeft="18dp"
             android:layout_marginRight="18dp"
-            app:dsb_min="-5"
             app:dsb_max="69" />
 
         <!--<org.zakariya.flyoutmenu.FlyoutMenuView-->
@@ -79,8 +78,4 @@
             android:foreground="?attr/selectableItemBackground"
             tools:ignore="HardcodedText"/>
     </LinearLayout>
-
-
-
-
 </LinearLayout>

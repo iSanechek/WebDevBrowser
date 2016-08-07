@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.BottomSheetDialog;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.View;
 import android.webkit.WebView;
@@ -105,6 +107,10 @@ public abstract class PageFragment extends PageViewFragment implements
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
         changeText(getString(R.string.fontsize));
 
+        Log.e(TAG, "showFontSizeDialog: ");
+        int size = getWebView().getSettings().getDefaultFontSize();
+        Log.e(TAG, "Default Font Size: " + size);
+
         if (AppPreferences.isFirstStart()) {
             showWarningDialog();
         }
@@ -122,8 +128,8 @@ public abstract class PageFragment extends PageViewFragment implements
                     int i = sb.getProgress() - 1;
 
                     sb.setProgress(i);
-                    getWebView().getSettings().setDefaultFontSize(i + 1);
-                    editText.setText((i + 1) + "");
+                    getWebView().getSettings().setDefaultFontSize(i);
+                    editText.setText((i) + "");
                 }
             }
         });
@@ -134,8 +140,8 @@ public abstract class PageFragment extends PageViewFragment implements
                     int i = sb.getProgress() + 1;
 
                     sb.setProgress(i);
-                    getWebView().getSettings().setDefaultFontSize(i + 1);
-                    editText.setText((i + 1) + "");
+                    getWebView().getSettings().setDefaultFontSize(i);
+                    editText.setText((i) + "");
                 }
             }
         });
@@ -148,7 +154,7 @@ public abstract class PageFragment extends PageViewFragment implements
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (!s.toString().equals("")) {
-                    sb.setProgress(Integer.valueOf(s.toString()) - 1);
+                    sb.setProgress(Integer.valueOf(s.toString()));
                     editText.setSelection(s.length());
                 }
             }
@@ -191,7 +197,6 @@ public abstract class PageFragment extends PageViewFragment implements
         editText.selectAll();
         editText.requestFocus();
 
-        changeFontSize(sb.getProgress());
 //        ((InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE)).toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
     }
 
@@ -234,7 +239,16 @@ public abstract class PageFragment extends PageViewFragment implements
         View v = getActivity().getLayoutInflater().inflate(R.layout.url_textview, null);
         assert v != null;
         final EditText editText = (EditText) v.findViewById(R.id.editText);
-        editText.setText(globalUrl);
+        String saveUrl = AppPreferences.getLastLink();
+        editText.setText(saveUrl);
+
+        v.findViewById(R.id.clear_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                editText.setText("");
+                AppPreferences.saveLastLink("");
+            }
+        });
 
         new MaterialDialog.Builder(getActivity())
                 .title(R.string.enter_url)
@@ -244,7 +258,11 @@ public abstract class PageFragment extends PageViewFragment implements
                 .callback(new MaterialDialog.ButtonCallback() {
                     @Override
                     public void onPositive(MaterialDialog dialog) {
-                        loadUrl(editText.getText().toString());
+                        String url = editText.getText().toString();
+                        if (!TextUtils.isEmpty(url)) {
+                            loadUrl(url);
+                            AppPreferences.saveLastLink(url);
+                        }
                         super.onPositive(dialog);
                     }
                 })

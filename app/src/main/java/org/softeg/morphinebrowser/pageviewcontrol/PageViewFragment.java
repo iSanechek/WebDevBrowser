@@ -79,6 +79,8 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
             mWebView.setActionBarheight(getActivity().getActionBar().getHeight());
         registerForContextMenu(mWebView);
 
+        mWebView.getSettings().getTextZoom();
+
         return v;
     }
 
@@ -92,11 +94,8 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     @Override
     public void onPause() {
         super.onPause();
-        if (mConnectivityChangeReceiver != null) getActivity().unregisterReceiver(mConnectivityChangeReceiver);
-    }
-
-    protected void changeFontSize(int size) {
-        mWebView.getSettings().setTextZoom(size);
+        if (mConnectivityChangeReceiver != null)
+            getActivity().unregisterReceiver(mConnectivityChangeReceiver);
     }
 
     public AppWebView getWebView() {
@@ -120,20 +119,23 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     }
 
     /**
-     * Нет времени объяснять - пишим пока(читать как навсегда) так.
      * Понять и простить
      */
+
     @Override
     public void setPageTitle(String title) {
         if (getActivity() != null) {
-            pageTitle = title;
-            ((MainActivity)getActivity()).changeTitle(title);
+            if (title != null) {
+                pageTitle = title;
+                ((MainActivity)getActivity()).changeTitle(title);
+            }
         }
     }
 
     protected void changeText(String text) {
-        if (getActivity() != null)
+        if (getActivity() != null) {
             ((MainActivity)getActivity()).changeTitle(text);
+        }
     }
 
     public void clearText() {

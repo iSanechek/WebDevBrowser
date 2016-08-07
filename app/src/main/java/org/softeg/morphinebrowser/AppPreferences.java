@@ -37,4 +37,14 @@ public class AppPreferences {
         return prefs.getBoolean("First.Start", true);
     }
 
+    public static void saveLastLink(String url) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
+        prefs.edit().putString("Save.Url", url).apply();
+    }
+
+    public static String getLastLink() {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(App.getInstance());
+        return prefs.getString("Save.Url", "");
+    }
+
 }
