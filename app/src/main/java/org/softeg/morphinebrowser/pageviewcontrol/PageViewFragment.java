@@ -19,7 +19,11 @@ import org.softeg.morphinebrowser.AppPreferences;
 import org.softeg.morphinebrowser.MainActivity;
 import org.softeg.morphinebrowser.R;
 import org.softeg.morphinebrowser.controls.AppWebView;
+import org.softeg.morphinebrowser.other.TinyDB;
+import org.softeg.morphinebrowser.other.UrlItem;
 import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.AppWebChromeClient;
+
+import java.util.ArrayList;
 
 
 /*
@@ -29,6 +33,7 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     protected AppWebView mWebView;
     protected String globalUrl;
     private String pageTitle = null;
+    protected TinyDB tinyDB;
 
     protected int getViewResourceId() {
         return R.layout.webview_fragment;
@@ -81,6 +86,8 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
         mWebView.getSettings().getTextZoom();
 
+        tinyDB = new TinyDB(getActivity());
+
         return v;
     }
 
@@ -118,12 +125,9 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
     }
 
-    /**
-     * Понять и простить
-     */
-
     @Override
-    public void setPageTitle(String title) {
+    public void setPageTitle(String title, String url) {
+        saveUrl(title, url);
         if (getActivity() != null) {
             if (title != null) {
                 pageTitle = title;
@@ -131,6 +135,11 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
             }
         }
     }
+
+    /**
+     * Понять и простить
+     */
+
 
     protected void changeText(String text) {
         if (getActivity() != null) {
@@ -206,4 +215,30 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
             mWebView.setNetworkAvailable(isConnected);
         }
     };
+
+    private void saveUrl(String title, String url) {
+        ArrayList<UrlItem> urls = tinyDB.getListObject("SaveUrl");
+        /*Иначе падает когда в urls нет ничего*/
+        if (urls.size() != 0) {
+            if (!checkUrlsDublicate(url, urls)) {
+                urls.add(0, new UrlItem(title, url));
+                tinyDB.clear();
+                tinyDB.putListObject("SaveUrl", urls);
+            }
+        } else {
+            urls.add(0, new UrlItem(title, url));
+            tinyDB.clear();
+            tinyDB.putListObject("SaveUrl", urls);
+        }
+    }
+
+    private boolean checkUrlsDublicate(String url, ArrayList<UrlItem> items) {
+        boolean have = false;
+        for (UrlItem item : items) {
+            if (url.contains(item.getUrl())) {
+                have = true;
+            }
+        }
+        return have;
+    }
 }

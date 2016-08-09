@@ -34,7 +34,7 @@ class AppWebViewClient extends WebViewClient {
         super.onPageFinished(view, url);
         listener.setSupportProgressBarIndeterminateVisibility(false);
         if (!TextUtils.isEmpty(view.getTitle())) {
-            listener.setPageTitle(view.getTitle());
+            listener.setPageTitle(view.getTitle(), url);
         }
     }
 /*

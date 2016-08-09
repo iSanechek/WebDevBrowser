@@ -12,7 +12,12 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -21,6 +26,8 @@ import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
 import org.softeg.morphinebrowser.R;
 import org.softeg.morphinebrowser.common.UrlExtensions;
+import org.softeg.morphinebrowser.other.UrlItem;
+import org.softeg.morphinebrowser.other.UrlsAdapter;
 import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.Developer;
 import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.HtmlOutManager;
 import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.IHtmlOutListener;
@@ -39,6 +46,7 @@ public abstract class PageFragment extends PageViewFragment implements
 
     protected HtmlOutManager mHtmlOutManager;
     protected int mScrollY = 0;
+    private EditText editText;
 
     protected void initHtmlOutManager() {
         mHtmlOutManager = new HtmlOutManager(this);
@@ -235,39 +243,65 @@ public abstract class PageFragment extends PageViewFragment implements
 //        }
     }
 
-    protected void writeUrl() {
-        View v = getActivity().getLayoutInflater().inflate(R.layout.url_textview, null);
-        assert v != null;
-        final EditText editText = (EditText) v.findViewById(R.id.editText);
-        String saveUrl = AppPreferences.getLastLink();
-        editText.setText(saveUrl);
+    protected void showDialogUrlsList() {
+        View v = getActivity().getLayoutInflater().inflate(R.layout.dialog_urls, null);
+        assert  v != null;
+        editText = (EditText) v.findViewById(R.id.editText);
+        editText.setText(globalUrl);
+
+        final ListView listView = (ListView) v.findViewById(R.id.list_urls);
+
+        final ArrayList<UrlItem> urls = tinyDB.getListObject("SaveUrl");
+        ArrayAdapter<UrlItem> adapter = new UrlsAdapter(getContext(), urls);
+        listView.setAdapter(adapter);
+
+        final BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
+        dialog.setContentView(v);
+        dialog.show();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                editText.setText("");
+                UrlItem item = urls.get(i);
+                loadUrl(item.getUrl());
+                dialog.dismiss();
+            }
+        });
+
+        v.findViewById(R.id.go_btn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String url = editText.getText().toString();
+                if (!TextUtils.isEmpty(url)) {
+                    loadUrl(url);
+                    dialog.dismiss();
+                }
+            }
+        });
+
+        final Button clear_history = (Button) v.findViewById(R.id.clear_history);
+        clear_history.setVisibility(urls.size() != 0 ? View.VISIBLE : View.GONE);
+        clear_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tinyDB.remove("SaveUrl");
+                urls.clear();
+                listView.setAdapter(null);
+                clear_history.setVisibility(View.GONE);
+                Toast.makeText(getActivity(), "Усе чисто", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         v.findViewById(R.id.clear_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 editText.setText("");
-                AppPreferences.saveLastLink("");
             }
         });
-
-        new MaterialDialog.Builder(getActivity())
-                .title(R.string.enter_url)
-                .customView(v, false)
-                .positiveText(R.string.ok)
-                .negativeText(R.string.cancel)
-                .callback(new MaterialDialog.ButtonCallback() {
-                    @Override
-                    public void onPositive(MaterialDialog dialog) {
-                        String url = editText.getText().toString();
-                        if (!TextUtils.isEmpty(url)) {
-                            loadUrl(url);
-                            AppPreferences.saveLastLink(url);
-                        }
-                        super.onPositive(dialog);
-                    }
-                })
-                .show();
     }
+
+
 
     private static void getStylesList(ArrayList<CharSequence> newStyleNames, ArrayList<CharSequence> newstyleValues,
                                       File file, String ext) {

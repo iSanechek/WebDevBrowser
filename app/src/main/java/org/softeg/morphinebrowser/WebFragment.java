@@ -87,7 +87,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             getActivity().finish();
             return true;
         } else if (id == R.id.write_url) {
-            writeUrl();
+            showDialogUrlsList();
             return true;
         } else if (id == R.id.cache_mode) {
             showCacheDialog();
