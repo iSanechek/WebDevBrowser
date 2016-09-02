@@ -2,229 +2,228 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/ch.acra/acra/4.9.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="d03cbe00a6703cfa62ae868707af59d41aff2140">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/ch.acra-acra-4.9.0_73879329caa413d7ce50cdbdde7a9718a50ac77f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.12.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="a540784239c611ea490593e2053a5e2890675c68">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fresco-0.12.0_f93e7b1108c6b6e77c55bd8d4c3a47f622cecf02/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/org.adw.library/discrete-seekbar/1.0.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.adw.library/discrete-seekbar/1.0.1/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
         sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.adw.library-discrete-seekbar-1.0.1_bc2bc18f4217204c63b0c80fa065cec894d8a664/classes.dex" />
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/org.adw.library-discrete-seekbar-1.0.1_a61e3831754ac9d84f778dc39ff2e707c55a63a3.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.1.1_6e76ffb65777feafc0162e035404e67bc3ad4d11/classes.dex" />
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-24.2.0_b7b022678208ee0548fdccec886572eaf7367561.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.1.1_7f0f9e00990893d8274e63e5d92ee48251ca46c3/classes.dex" />
+        sha1="c755536e5a100d9c76c8ea0b72f76c018f7a9de2">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-24.2.0_f2ae0c9e889f90599e66f0757b571971d2496270.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/ch.acra/acra/4.9.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="f6d94f40aba600525cace72b8695877246b9710f">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_85c9c0252232eefe10951f0265e4a4516d917442/classes.dex" />
+        sha1="d03cbe00a6703cfa62ae868707af59d41aff2140">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/ch.acra-acra-4.9.0_5a6e323c416774ecf17664480ae02807654ede68.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.12.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-base-0.12.0_4df4df65970a5a5aaf315dc6036024999e926081/classes.dex" />
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-24.2.0_c7b61c8343187000ba8122ed0be7630f1760364f.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.6.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="38955f75e5bdc80a7856eccbd256f75c1bc4bb41">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.afollestad.material-dialogs-commons-0.8.6.2_a8bd332d46dc48d87971e53b3a8dcd0e037a7bfb/classes.dex" />
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_9243d2a2a6ddf5bbdf50cb04b48dac39572549ac.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.12.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fbcore-0.12.0_88d0d6313e9bdc8e835a9adec64fc13ec8d317eb/classes.dex" />
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-24.2.0_a5d8bd899c440f9014563122390e99d9d72c794d.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="6d7d803871e3203465f71a163e7af104f807b446">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.1.1_a3072630f6f5697662c10f6f29fab3301cd3f187/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="e195bd694d5389acfba27ff4fdfa64c4c65b2c05">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.1.1_9c88f3355c25cbf4a0fda2e316ac8a0948be8a90/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_dc7b77aab0654dd6a2e610e22118a8abe6a6e6f6/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_5120a6d28a3469433c4c468dd8ab06d27e65ec07/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.1.1_552b4c77ce8edc50e0b46f1e3fab7515dacf7bf1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/opt/android-studio/gradle/m2repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="a60a5e993c98c864010053cb901b7eab25306568">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.2.4_ee0179183cc12d87b762899f0e71bd373d3fee7f/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
         sha1="b2dbfe7bacc123fbaded7cc20cd0be11ca052397">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.zakariya.flyoutmenus-flyoutmenu-0.5.3_2cd029628a5215e84788bbe2d89840cb02c5cac7/classes.dex" />
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/org.zakariya.flyoutmenus-flyoutmenu-0.5.3_40b36c190e6250c06aadbb05702c9a0c7b9c396c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.6.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="cbdf1602ce622f3445dc7513237f30930c6e4a5a">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.afollestad.material-dialogs-core-0.8.6.2_a8c15b58d754193eb0b85879389d31f9cbc0768c/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.droidninja/filepicker/1.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.droidninja/filepicker/1.0.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
         sha1="be9340c6b0bf6d4015fe5ae5ebb00bbf5e06c40c">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.droidninja-filepicker-1.0.0_46c0294f7642cbfe0c5196733d6654f760fb0d69/classes.dex" />
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.droidninja-filepicker-1.0.0_ea8060a6e6199b1d3aa5bdadd75499398665bbba.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.7/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/me.zhanghai.android.materialprogressbar-library-1.1.7_0aec39325bc20c2f5406712f704453ebb1d27e73/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
-        revision="24.0.2"
-        sha1="787871951412550519b0222aba3c9df4cea49875">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.1.1_5f777c7c66677391a39c587cb8b6e0a51dcedc9b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.12.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.12.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
         sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-0.12.0_284b912a96785c2a1877aec6ace3e7de81a0a4a6/classes.dex" />
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-0.12.0_64572f067914f11205baa8b5d303438b0244cce8.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="b5fd5ed09b0d3b686c2d33cc97fbf17a541a2344">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5b886cf78b6ca6cda63b356ee6e7fb193faa2c63/classes.dex" />
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-24.2.0_685bf29e78ffc60acba928a0f64da0adf664538c.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.1.1/support-annotations-24.1.1.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.1.1_ee6e2f482050795092a22f10592ffeda244e3df5/classes.dex" />
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/gson-2.4_96fa70396d5486aac5affca5b55eae2ab08f38d0.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.12.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/design/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="23eb0d2998a782213b56168cbf23a0688b9111d9">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-design-24.2.0_c133fa3201e9abfc81c3b3565d4dedf5fa124e96.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-24.2.0_8ba961fa89597204eeda6b7d22eab5900a2153d0.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.12.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-0.12.0_8210ad7c2b30f3d16e017784f9c0bfa05c3126f6.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-24.2.0_c8c37e8ed0649c58d36454f293aa5a521ad5a1d7.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_5fc983606c4d8bf69828401a248cdbfde49cba38.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.12.0/jars/classes.jar"
+        jumboMode="false"
         revision="24.0.2"
         sha1="1e346707e4770db216049a532ab3eb5e317cf82a">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-drawee-0.12.0_a1749c66e4ce8c7b4a157c1fce5802c68d60db48/classes.dex" />
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-0.12.0_c5467112e0eeec1b46ab4e23867cac1051bcad9a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="false"
+        jar="/home/isanechek/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="false"
         revision="24.0.2"
-        sha1="f62e763609f65e47dc6c498760a4accf02776788">
-        <dex dex="/home/isanechek/projectJopa/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.1.1_8108e10405ffd2e157e76e0e12589be3b0b16926/classes.dex" />
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/support-annotations-24.2.0_e97d6d374be126aaa612587a7c3c66836252e43b.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.12.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-0.12.0_cef6977e71b01113b6a3013358337f3ec02a7c2f.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_bcd975cc3eb74aa51cf5558a29c615e18dca854e.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-24.2.0_330784721422143fb4e549ce88bc94aebcec86e2.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-24.2.0_9322201a24f5b8e71dd51a82998cbb2558c23a7f.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_5a0b7c6553a86b23964feaf74ce5eebe058d8a96.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.6.2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="cbdf1602ce622f3445dc7513237f30930c6e4a5a">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.afollestad.material-dialogs-core-0.8.6.2_d9e63b04155641eb805afaf1bbb14cd333b804fb.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.6.2/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="38955f75e5bdc80a7856eccbd256f75c1bc4bb41">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.afollestad.material-dialogs-commons-0.8.6.2_c58fad565d873a8977904db92c90ea53c605166c.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_dc7b77aab0654dd6a2e610e22118a8abe6a6e6f6.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/library-2.4.0_5120a6d28a3469433c4c468dd8ab06d27e65ec07.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.7/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/me.zhanghai.android.materialprogressbar-library-1.1.7_0ef8b5e1a572990a304ee97fbfbd4808f3cbe5aa.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-24.2.0_c3b60afaf3d21a122f615a95181b8a9fcf9904e6.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.12.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="a540784239c611ea490593e2053a5e2890675c68">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-0.12.0_8be9d592ae72782bb406508c8fac4eeb1db51845.jar" />
+    </item>
+    <item
+        jar="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.2"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/home/isanechek/IntelliJIDEAProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-24.2.0_8d6e9eb8665011ec7d7d044004cbb34b8bb13fc6.jar" />
     </item>
 
 </items>

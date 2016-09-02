@@ -3,9 +3,7 @@ package org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces;/*
  */
 
 import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
+import android.content.*;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -101,6 +99,14 @@ public class Developer implements IHtmlOut {
 
 
         }
+    }
+
+    @JavascriptInterface
+    public void copyPast(String text) {
+        ClipboardManager manager = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clipData = ClipData.newPlainText("green figa", text);
+        manager.setPrimaryClip(clipData);
+        Toast.makeText(getActivity(), "Скопировал: " + text, Toast.LENGTH_SHORT).show();
     }
 
 
