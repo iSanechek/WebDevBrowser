@@ -10,14 +10,11 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
+import android.widget.*;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
@@ -269,14 +266,30 @@ public abstract class PageFragment extends PageViewFragment implements
             }
         });
 
-        v.findViewById(R.id.go_btn).setOnClickListener(new View.OnClickListener() {
+//        v.findViewById(R.id.go_btn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String url = editText.getText().toString();
+//                if (!TextUtils.isEmpty(url)) {
+//                    loadUrl(url);
+//                    dialog.dismiss();
+//                }
+//            }
+//        });
+
+        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onClick(View view) {
-                String url = editText.getText().toString();
-                if (!TextUtils.isEmpty(url)) {
-                    loadUrl(url);
-                    dialog.dismiss();
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                boolean state = false;
+                if (actionId == EditorInfo.IME_ACTION_GO) {
+                    String link = editText.getText().toString();
+                    if (link != null) {
+                        loadUrl(link);
+                        dialog.dismiss();
+                        state = true;
+                    }
                 }
+                return state;
             }
         });
 

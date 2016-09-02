@@ -21,28 +21,29 @@
             android:layout_height="wrap_content"
             android:inputType="textWebEditText"
             android:layout_marginRight="8dp"
+            android:imeOptions="actionGo"
             android:singleLine="true"/>
 
         <ImageButton
-            android:id="@+id/clear_btn"
-            android:layout_weight="0.5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_marginRight="16dp"
-            android:background="@null"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_close_black_24dp"/>
+                android:id="@+id/clear_btn"
+                android:layout_weight="0.5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:background="@null"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_close_black_24dp"
+                tools:ignore="MissingPrefix"/>
 
-        <ImageButton
-            android:id="@+id/go_btn"
-            android:layout_weight="0.5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:background="@null"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_arrow_forward_black_24dp"/>
+        <!--<ImageButton-->
+            <!--android:id="@+id/go_btn"-->
+            <!--android:layout_weight="0.5"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="8dp"-->
+            <!--android:background="@null"-->
+            <!--android:layout_gravity="center"-->
+            <!--app:srcCompat="@drawable/ic_arrow_forward_black_24dp"/>-->
 
     </LinearLayout>
 
