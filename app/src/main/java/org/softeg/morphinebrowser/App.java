@@ -1,7 +1,9 @@
 package org.softeg.morphinebrowser;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -12,6 +14,7 @@ public class App extends Application {
     private static final String FOLDER_NAME = "DWDBHtml";
 
     private static App INSTANCE = null;
+    private static SharedPreferences preferences;
 
     public App() {
         INSTANCE = this;
@@ -29,6 +32,13 @@ public class App extends Application {
 
     public int getUniqueIntValue() {
         return m_AtomicInteger.incrementAndGet();
+    }
+
+    public static SharedPreferences getPreferences() {
+        if (preferences == null) {
+            preferences = PreferenceManager.getDefaultSharedPreferences(INSTANCE.getApplicationContext());
+        }
+        return preferences;
     }
 
     public static String getHtmlFolder() {
