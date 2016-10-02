@@ -165,6 +165,18 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
             ((MainActivity)getActivity()).clearTitle(pageTitle);
     }
 
+    public void chooseFile() {
+        if (getActivity() != null) {
+            ((MainActivity)getActivity()).openFilePicker();
+        }
+    }
+
+    public void showHistoryFragment(String url) {
+        if (getActivity() != null) {
+            ((MainActivity)getActivity()).showFragmentHistory(url);
+        }
+    }
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="0dff102fdc0af860e0549b5249d6213cb4093bfd">
+        sha1="38260d6d03b7045bedf4bae4ae175f94955737c3">
         <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6054bb323622d083d87157fd6347dc2cc1c8dfa1/classes.dex" />
     </item>
     <item
@@ -79,8 +79,17 @@
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="62e06140dc8cc1f0b6c3c525c9d24274310ca76f">
+        sha1="e88c223e5944819219279bef0a52da4449091a1b">
         <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6d79bff1fafe8969e0ebd9ac4d75e0ada7caaa3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-24.2.1_fec641e65e623eaa11bfd410ce996e3b6ce2617f/classes.dex" />
     </item>
     <item
         is-multidex="true"

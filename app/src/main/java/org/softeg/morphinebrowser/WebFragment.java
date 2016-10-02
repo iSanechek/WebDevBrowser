@@ -36,9 +36,9 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     private static final String URL_KEY = "WebFragment.URL";
     private int progressValueWidtPage;
 
-    public static Fragment getInstance(Uri url) {
+    public static Fragment getInstance(String url) {
         Bundle args = new Bundle();
-        args.putString(URL_KEY, url == null ? "" : url.toString());
+        args.putString(URL_KEY, url == null ? "" : url);
         WebFragment fragment = new WebFragment();
         fragment.setArguments(args);
         return fragment;
@@ -100,7 +100,8 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             showAboutDialog();
             return true;
         }  else if (id == R.id.action_choose_file) {
-            openHtml();
+//            openHtml();
+            chooseFile();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -235,7 +236,6 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     public static final int FILE_CHOOSER = 1; //инит
     public String lastSelectDirPath = Environment.getExternalStorageDirectory().getPath();//для kit-kat и новее
     public void openHtml() {
-//        checkPermissionsAndOpenFilePicker();
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {//для lollipop и новее
             Toast.makeText(getActivity(), R.string.ex_storage_prem, Toast.LENGTH_LONG).show();
             return;
@@ -269,69 +269,5 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                 })
                 .show();
     }
-
-    public static final int FILE_PICKER_REQUEST_CODE = 1;
-
-    private void checkPermissionsAndOpenFilePicker() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
-                @Override
-                public void onPermissionsGranted(String[] permissions) throws SecurityException {
-                    openFilePicker();
-                }
-            }).whenPermissionsRefused(new PermissionsRefusedListener() {
-                @Override
-                public void onPermissionsRefused(String[] permissions) {
-                    Toast.makeText(getContext(), "Allow external storage reading", Toast.LENGTH_SHORT).show();
-                }
-            }).execute(getActivity());
-        } else {
-            openFilePicker();
-        }
-    }
-
-
-    private void openFilePicker() {
-
-
-
-        try {
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_GET_CONTENT);//просит систему вызвать get_content
-            intent.setType("text/html");// uri
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) //выпоняется только при sdk >=18
-                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-            intent.setDataAndType(Uri.parse/*loadUrl*/("file://" + lastSelectDirPath), "text/html");
-            startActivityForResult(intent, FILE_CHOOSER);
-
-        } catch (ActivityNotFoundException ex) {//если ни одно приложение не найдено
-            Toast.makeText(getActivity(), R.string.ex_not_found_fm, Toast.LENGTH_LONG).show();
-        } catch (Exception ex) {
-            AppLog.e(getActivity(), ex);//записывается в лог проги как ошибка
-        }
-
-
-
-
-//        new MaterialFilePicker()
-//                .withSupportFragment(this)
-//                .withRequestCode(FILE_PICKER_REQUEST_CODE)
-//                .withHiddenFiles(true)
-//                .start();
-    }
-
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-//            String path = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
-//            if (path != null) {
-//                Log.d("Path (fragment): ", path);
-//            } else {
-//                Toast.makeText(getActivity(), "NULL", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
 }
 

@@ -1,7 +1,10 @@
 package org.softeg.morphinebrowser;
 
 
+import android.Manifest;
+import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +15,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.jksiezni.permissive.PermissionsGrantedListener;
+import com.github.jksiezni.permissive.PermissionsRefusedListener;
+import com.github.jksiezni.permissive.Permissive;
+import com.nbsp.materialfilepicker.MaterialFilePicker;
+import com.nbsp.materialfilepicker.ui.FilePickerActivity;
+
 import org.softeg.morphinebrowser.controls.AppWebView;
 
 
@@ -19,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
     private TextView toolbar_title;
+    private HistoryFragment historyFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, toolbar_title.getText(), Toast.LENGTH_SHORT).show();
             }
         });
-        createFragment(getIntent() != null ? getIntent().getData() : null);
+        String url = null;
+        if (getIntent() != null) {
+            url = getIntent().getDataString();
+        }
+        createFragment(url);
     }
 
-    private void createFragment(Uri uri) {
+    private void createFragment(String uri) {
 
         getSupportFragmentManager()
                 .beginTransaction()
@@ -66,6 +80,24 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void showFragmentHistory(String url) {
+        historyFragment = HistoryFragment.newInstance(url);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.topic_fragment_container, historyFragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
+    }
+
+    public void hideFragmentHistory(String url) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .hide(historyFragment)
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .commit();
+        createFragment(url);
+    }
+
     /**
      * Понять и простить
      */
@@ -86,5 +118,49 @@ public class MainActivity extends AppCompatActivity {
             toolbar_title.setText(R.string.app_name);
         else
             toolbar_title.setText(title);
+    }
+
+    public static final int FILE_PICKER_REQUEST_CODE = 101;
+
+    public void openFilePicker() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
+                @Override
+                public void onPermissionsGranted(String[] permissions) throws SecurityException {
+                    new MaterialFilePicker()
+                            .withActivity(MainActivity.this)
+                            .withRequestCode(FILE_PICKER_REQUEST_CODE)
+                            .withHiddenFiles(true)
+                            .start();
+                }
+            }).whenPermissionsRefused(new PermissionsRefusedListener() {
+                @Override
+                public void onPermissionsRefused(String[] permissions) {
+                    Toast.makeText(MainActivity.this, "Allow external storage reading", Toast.LENGTH_SHORT).show();
+                }
+            }).execute(MainActivity.this);
+        } else {
+            new MaterialFilePicker()
+                    .withActivity(MainActivity.this)
+                    .withRequestCode(FILE_PICKER_REQUEST_CODE)
+                    .withHiddenFiles(true)
+                    .start();
+        }
+
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == RESULT_OK) {
+            String path = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+
+            if (path != null) {
+                createFragment("file://" + path);
+            }
+        }
     }
 }
