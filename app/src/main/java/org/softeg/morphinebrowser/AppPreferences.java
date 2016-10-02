@@ -12,6 +12,14 @@ public class AppPreferences {
         App.getPreferences().edit().putInt("WebView.FontSize", value).apply();
     }
 
+    public static int getPageWidthSize() {
+        return App.getPreferences().getInt("WebView.PageWidth", 0);
+    }
+
+    public static void setPageWidthSize(int value) {
+        App.getPreferences().edit().putInt("WebView.PageWidth", value).apply();
+    }
+
     public static int getCacheMode() {
         return App.getPreferences().getInt("WebView.CacheMode", 1);
     }

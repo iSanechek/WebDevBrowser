@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
@@ -34,6 +35,10 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     protected String globalUrl;
     private String pageTitle = null;
     protected TinyDB tinyDB;
+
+    protected void log(String tag, String text) {
+        Log.e(tag, text);
+    }
 
     protected int getViewResourceId() {
         return R.layout.webview_fragment;
@@ -75,6 +80,14 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         assert v != null;
 
         mWebView = (AppWebView) v.findViewById(R.id.webView);
+        int webViewWidthFromPref = AppPreferences.getPageWidthSize();
+        log("Web Fragment", "get Pref Page Width Size: " + webViewWidthFromPref);
+        if (webViewWidthFromPref != 0) {
+            RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(webViewWidthFromPref, RelativeLayout.LayoutParams.MATCH_PARENT);
+            rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+            mWebView.setLayoutParams(rl_lp);
+        }
+        mWebView.getSettings().setDefaultFontSize(AppPreferences.getWebViewFontSize());
         mWebView.initTopicPageWebView();
         if(autoHideActionBar())
             setHideActionBar();

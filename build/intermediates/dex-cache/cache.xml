@@ -1,2 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.1_8a6f9f6d278772134fadc31e23a83bf777e0b798/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.12.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="a540784239c611ea490593e2053a5e2890675c68">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fresco-0.12.0_bd4d96935c858670ee77372703f44c751eb15f97/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0dff102fdc0af860e0549b5249d6213cb4093bfd">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_6054bb323622d083d87157fd6347dc2cc1c8dfa1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.1_03c2457a693bb6c8c6e88efd6563758a7675ee61/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_f728fda42ca7599e47bae0af5f5a11a9ee1d2238/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.12.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="1e346707e4770db216049a532ab3eb5e317cf82a">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-drawee-0.12.0_0250ebc112003194c374863850a41e061cf8cae5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.2.1_1963cefa177a16ab0511a4808b1a82426fdadb8b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.1_198717f684767bda274e8c56a5ea10f860bc60c8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="62e06140dc8cc1f0b6c3c525c9d24274310ca76f">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_6d79bff1fafe8969e0ebd9ac4d75e0ada7caaa3b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/ch.acra/acra/4.9.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d03cbe00a6703cfa62ae868707af59d41aff2140">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/ch.acra-acra-4.9.0_8c8e5f358ffddb9100ef92471da8bbddadb5fe15/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.1_6a3256654b6c8d7f3923b0c30ca43522b69823b0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.github.jksiezni.permissive/permissive/0.1/c01c8680abc54727415bf51ca3a404356f43674a/permissive-0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c01c8680abc54727415bf51ca3a404356f43674a">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/permissive-0.1_3c196283214854fde80421cc1d5c7f9e92870862/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.nbsp/library/1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7815eae61f9359cf3ca861b35185557eee6494bf">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.nbsp-library-1.1_5ca8969851077f79b58e21fafc9fd074e3fe4903/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.6.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="38955f75e5bdc80a7856eccbd256f75c1bc4bb41">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.afollestad.material-dialogs-commons-0.8.6.2_3b5c5123d0593021a51f02b2613a2747c4a42d55/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_96fa70396d5486aac5affca5b55eae2ab08f38d0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_117f7177910e9eaf0338ed0aceddadd266ae312b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/design/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-24.2.1_980273862c5a5417f9c11ba0cda88e5cb227cf25/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_afa1c8fa3b28f8684af5ea75abf2856131b71ca9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/bolts-tasks-1.4.0_dc7b77aab0654dd6a2e610e22118a8abe6a6e6f6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.6.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="cbdf1602ce622f3445dc7513237f30930c6e4a5a">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.afollestad.material-dialogs-core-0.8.6.2_cb5199b3c20982d33890008cf749e28cdde86a81/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.12.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-0.12.0_024b30621ac6eb4a6c5f19bebc40868f278661bf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.1_3126a9dca06085b994c21b1f7485e4b7ca2a54f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.12.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-fbcore-0.12.0_afc9ac069393dd0aa7c9e0c7772e5ea7edec2a30/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_5120a6d28a3469433c4c468dd8ab06d27e65ec07/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.1_b89ff33ed89fed1dea59b23b31262825a669a138/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.7/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/me.zhanghai.android.materialprogressbar-library-1.1.7_fad25a84dff2c02db16a637a6d6ff8f5d22f2e81/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_16bcaa4617820e3b706a099f3d57032d55b3088a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.1_ed212c2aece920a538d89855f15a119d988d28f7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.adw.library/discrete-seekbar/1.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.adw.library-discrete-seekbar-1.0.1_017207b9f992efe657c931132b83a602382b26e6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.1_571c8087e3011afa41f465ecca01e9e89ae92779/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.12.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.facebook.fresco-imagepipeline-base-0.12.0_1221811510dfb1663190a3482a860bc902ccd6d4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.1_3db9573a5d5fe1696fb7e239efa43347f147bc45/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.droidninja/filepicker/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="be9340c6b0bf6d4015fe5ae5ebb00bbf5e06c40c">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.droidninja-filepicker-1.0.0_349172a83465fa97af9dfe004b212cdc92b2cd23/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b2dbfe7bacc123fbaded7cc20cd0be11ca052397">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.zakariya.flyoutmenus-flyoutmenu-0.5.3_b913547321e3fbfb08f0d6ba7d2c4cd55fb7150f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.1_8920e384a0876ea2dff70a37961cdc00182d1fcd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/isanechek/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.1_cdeec5e1fa77d2af1a53b81124e58f404fa806ea/classes.dex" />
+    </item>
+
+</items>

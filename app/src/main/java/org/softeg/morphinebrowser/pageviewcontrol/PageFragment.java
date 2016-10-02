@@ -1,7 +1,9 @@
 package org.softeg.morphinebrowser.pageviewcontrol;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.BottomSheetDialog;
@@ -17,6 +19,9 @@ import android.webkit.WebView;
 import android.widget.*;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.jksiezni.permissive.PermissionsGrantedListener;
+import com.github.jksiezni.permissive.PermissionsRefusedListener;
+import com.github.jksiezni.permissive.Permissive;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.AppLog;
@@ -100,6 +105,24 @@ public abstract class PageFragment extends PageViewFragment implements
 
 
     public void saveHtml() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            new Permissive.Request(Manifest.permission.WRITE_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
+                @Override
+                public void onPermissionsGranted(String[] permissions) throws SecurityException {
+                    saveHtmlHelper();
+                }
+            }).whenPermissionsRefused(new PermissionsRefusedListener() {
+                @Override
+                public void onPermissionsRefused(String[] permissions) {
+                    Toast.makeText(getActivity(), "Wow!!! Permission not granted!", Toast.LENGTH_SHORT).show();
+                }
+            }).execute(getActivity());
+        } else {
+            saveHtmlHelper();
+        }
+    }
+
+    private void saveHtmlHelper() {
         try {
             mWebView.evalJs("window." + Developer.NAME + ".saveHtml('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
         } catch (Throwable ex) {
@@ -119,6 +142,8 @@ public abstract class PageFragment extends PageViewFragment implements
         if (AppPreferences.isFirstStart()) {
             showWarningDialog();
         }
+
+
 
         assert v != null;
         final DiscreteSeekBar sb = (DiscreteSeekBar) v.findViewById(R.id.value_seek_bar);

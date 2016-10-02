@@ -42,7 +42,10 @@ public class saveHtml {
                                 return;
                             }
 
-                            File file = new File(App.getInstance().getExternalFilesDir(null), fileName[0]+".html");
+                            String rootPath = Environment.getExternalStorageDirectory().toString();
+                            File folder = new File(rootPath + "/WDB"+ "/pages");
+                            folder.mkdirs();
+                            File file = new File(folder, fileName[0]+".html");
                             FileWriter out = new FileWriter(file);
                             out.write(html);
                             out.close();

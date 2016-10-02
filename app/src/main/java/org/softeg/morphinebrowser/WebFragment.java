@@ -22,6 +22,9 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.jksiezni.permissive.PermissionsGrantedListener;
+import com.github.jksiezni.permissive.PermissionsRefusedListener;
+import com.github.jksiezni.permissive.Permissive;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
@@ -31,6 +34,7 @@ import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
  */
 public class WebFragment extends PageFragment /*implements FileChooserDialog.FileCallback*/{
     private static final String URL_KEY = "WebFragment.URL";
+    private int progressValueWidtPage;
 
     public static Fragment getInstance(Uri url) {
         Bundle args = new Bundle();
@@ -117,8 +121,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         int screenWidth = size.x;
 
         int webViewWidth = getWebView().getMeasuredWidth();
-
-
+        log("Web Fragment", "get Pref Page Width Size Result: " + webViewWidth);
         final DiscreteSeekBar sb = (DiscreteSeekBar) v.findViewById(R.id.value_seek_bar);
 
         sb.setMax(screenWidth);
@@ -177,6 +180,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             }
         });
 
+
         sb.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
             public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
@@ -184,6 +188,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                     RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(value, RelativeLayout.LayoutParams.MATCH_PARENT);
                     rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
                     getWebView().setLayoutParams(rl_lp);
+                    progressValueWidtPage = value;
                     rl_lp = null;
                     editText.setText((value) + "");
                 } catch (Throwable ex) {
@@ -209,6 +214,8 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
                 clearText();
+                AppPreferences.setPageWidthSize(progressValueWidtPage);
+                log("Web Fragment", "Save Page Width Size: " + progressValueWidtPage);
             }
         });
         editText.selectAll();
@@ -225,28 +232,10 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                 .show();
     }
 
-    private void showNightModeDialog() {
-        new MaterialDialog.Builder(getActivity())
-                .title("Ночьной режим")
-                .items(R.array._night_mode)
-                .itemsCallback(new MaterialDialog.ListCallback() {
-                    @Override
-                    public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
-                        switch (which) {
-                            case 0:
-                                break;
-                            case 1:
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                }).show();
-    }
-
     public static final int FILE_CHOOSER = 1; //инит
     public String lastSelectDirPath = Environment.getExternalStorageDirectory().getPath();//для kit-kat и новее
     public void openHtml() {
+//        checkPermissionsAndOpenFilePicker();
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {//для lollipop и новее
             Toast.makeText(getActivity(), R.string.ex_storage_prem, Toast.LENGTH_LONG).show();
             return;
@@ -281,5 +270,68 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                 .show();
     }
 
+    public static final int FILE_PICKER_REQUEST_CODE = 1;
+
+    private void checkPermissionsAndOpenFilePicker() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
+                @Override
+                public void onPermissionsGranted(String[] permissions) throws SecurityException {
+                    openFilePicker();
+                }
+            }).whenPermissionsRefused(new PermissionsRefusedListener() {
+                @Override
+                public void onPermissionsRefused(String[] permissions) {
+                    Toast.makeText(getContext(), "Allow external storage reading", Toast.LENGTH_SHORT).show();
+                }
+            }).execute(getActivity());
+        } else {
+            openFilePicker();
+        }
+    }
+
+
+    private void openFilePicker() {
+
+
+
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_GET_CONTENT);//просит систему вызвать get_content
+            intent.setType("text/html");// uri
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) //выпоняется только при sdk >=18
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.setDataAndType(Uri.parse/*loadUrl*/("file://" + lastSelectDirPath), "text/html");
+            startActivityForResult(intent, FILE_CHOOSER);
+
+        } catch (ActivityNotFoundException ex) {//если ни одно приложение не найдено
+            Toast.makeText(getActivity(), R.string.ex_not_found_fm, Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            AppLog.e(getActivity(), ex);//записывается в лог проги как ошибка
+        }
+
+
+
+
+//        new MaterialFilePicker()
+//                .withSupportFragment(this)
+//                .withRequestCode(FILE_PICKER_REQUEST_CODE)
+//                .withHiddenFiles(true)
+//                .start();
+    }
+
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//
+//        if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+//            String path = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
+//            if (path != null) {
+//                Log.d("Path (fragment): ", path);
+//            } else {
+//                Toast.makeText(getActivity(), "NULL", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+//    }
 }
 
