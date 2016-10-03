@@ -1,6 +1,6 @@
 package org.softeg.morphinebrowser.classes.io;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 
-import org.softeg.morphinebrowser.App;
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.R;
 
@@ -19,7 +18,7 @@ import java.io.FileWriter;
  * Created by Snow Volf on 06.02.16.
  */
 public class saveHtml {
-    public saveHtml(final Activity activity, final String html, final String defaultFileName){
+    public saveHtml(final Context activity, final String html, final String defaultFileName){
         final String[] fileName = {defaultFileName};
         new MaterialDialog.Builder(activity)
                 .title(R.string.export_html)

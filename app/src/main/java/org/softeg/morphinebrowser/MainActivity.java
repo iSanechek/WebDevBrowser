@@ -1,25 +1,14 @@
 package org.softeg.morphinebrowser;
 
 
-import android.Manifest;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.github.jksiezni.permissive.PermissionsGrantedListener;
-import com.github.jksiezni.permissive.PermissionsRefusedListener;
-import com.github.jksiezni.permissive.Permissive;
-import com.nbsp.materialfilepicker.MaterialFilePicker;
-import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import org.softeg.morphinebrowser.controls.AppWebView;
 
@@ -57,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.e("Main Activity", "onCreate: " + url);
+
         createFragment(url);
     }
 
@@ -121,50 +111,5 @@ public class MainActivity extends AppCompatActivity {
             toolbar_title.setText(R.string.app_name);
         else
             toolbar_title.setText(title);
-    }
-
-    public static final int FILE_PICKER_REQUEST_CODE = 101;
-
-    public void openFilePicker() {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
-                @Override
-                public void onPermissionsGranted(String[] permissions) throws SecurityException {
-                    new MaterialFilePicker()
-                            .withActivity(MainActivity.this)
-                            .withRequestCode(FILE_PICKER_REQUEST_CODE)
-                            .withHiddenFiles(true)
-                            .withPath(App.getHtmlFolder())
-                            .start();
-                }
-            }).whenPermissionsRefused(new PermissionsRefusedListener() {
-                @Override
-                public void onPermissionsRefused(String[] permissions) {
-                    Toast.makeText(MainActivity.this, "Allow external storage reading", Toast.LENGTH_SHORT).show();
-                }
-            }).execute(MainActivity.this);
-        } else {
-            new MaterialFilePicker()
-                    .withActivity(MainActivity.this)
-                    .withRequestCode(FILE_PICKER_REQUEST_CODE)
-                    .withHiddenFiles(true)
-                    .start();
-        }
-
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == RESULT_OK) {
-            String path = data.getStringExtra(FilePickerActivity.RESULT_FILE_PATH);
-
-            if (path != null) {
-                createFragment("file://" + path);
-            }
-        }
     }
 }

@@ -1,13 +1,9 @@
 package org.softeg.morphinebrowser.pageviewcontrol;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-
-import org.softeg.morphinebrowser.AppLog;
-import org.softeg.morphinebrowser.common.IntentUtils;
 
 
 /*

@@ -3,13 +3,14 @@ package org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces;/*
  */
 
 import android.app.Activity;
-import android.content.*;
+import android.content.ActivityNotFoundException;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
-
-import com.nbsp.materialfilepicker.MaterialFilePicker;
-import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import org.softeg.morphinebrowser.App;
 import org.softeg.morphinebrowser.AppLog;
@@ -92,15 +93,10 @@ public class Developer implements IHtmlOut {
                                  Intent data) {
 
         if (resultCode == Activity.RESULT_OK && requestCode == FILECHOOSER_RESULTCODE) {
-
-            Log.e("Developer", "onActivityResult: " + data.getDataString() + " " + data.getData().toString());
-
             String attachFilePath = FileUtils.getRealPathFromURI(getContext(), data.getData());
             String cssData = FileUtils.readFileText(attachFilePath)
                     .replace("\\", "\\\\")
                     .replace("'", "\\'").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "");
-
-            Log.e("Developer", "onActivityResult1: " + attachFilePath + " " + cssData);
 
             control.getWebView().evalJs("$('#dev-less-file-path')[0].value='" + attachFilePath + "';");
             control.getWebView().evalJs("window['HtmlInParseLessContent']('" + cssData + "');");

@@ -16,7 +16,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
@@ -27,12 +26,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.jksiezni.permissive.PermissionsGrantedListener;
 import com.github.jksiezni.permissive.PermissionsRefusedListener;
 import com.github.jksiezni.permissive.Permissive;
-import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.common.FileUtils;
 import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
-import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.Developer;
 
 /*
  * Created by slartus on 25.10.2014.
@@ -106,7 +103,6 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             return true;
         }  else if (id == R.id.action_choose_file) {
             openHtml();
-//            chooseFile();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -284,17 +280,18 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (requestCode == FILE_CHOOSER && resultCode == Activity.RESULT_OK) {
             String attachFilePath = FileUtils.getRealPathFromURI(getContext(), data.getData());
-
-            if (attachFilePath != null) {
-                Log.d("Path (fragment): ", attachFilePath);
+            if (attachFilePath.contains(".html")) {
                 loadUrl("file:///" + attachFilePath);
-                Log.e("Path (fragment): ", "file:///" + attachFilePath);
             } else {
-                Log.e("Path (fragment): ", "NULL");
+                String cssData = FileUtils.readFileText(attachFilePath)
+                        .replace("\\", "\\\\")
+                        .replace("'", "\\'").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "");
+                mWebView.evalJs("$('#dev-less-file-path')[0].value='" + attachFilePath + "';");
+                mWebView.evalJs("window['HtmlInParseLessContent']('" + cssData + "');");
             }
+
         }
     }
 }

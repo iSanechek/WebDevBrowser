@@ -13,6 +13,7 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.widget.RelativeLayout;
 
 import org.softeg.morphinebrowser.AppLog;
@@ -163,12 +164,6 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
     public void clearText() {
         if (getActivity() != null)
             ((MainActivity)getActivity()).clearTitle(pageTitle);
-    }
-
-    public void chooseFile() {
-        if (getActivity() != null) {
-            ((MainActivity)getActivity()).openFilePicker();
-        }
     }
 
     public void showHistoryFragment(String url) {
