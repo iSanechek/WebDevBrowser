@@ -1,6 +1,7 @@
 package org.softeg.morphinebrowser;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
@@ -25,9 +27,12 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.jksiezni.permissive.PermissionsGrantedListener;
 import com.github.jksiezni.permissive.PermissionsRefusedListener;
 import com.github.jksiezni.permissive.Permissive;
+import com.nbsp.materialfilepicker.ui.FilePickerActivity;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
+import org.softeg.morphinebrowser.common.FileUtils;
 import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
+import org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces.Developer;
 
 /*
  * Created by slartus on 25.10.2014.
@@ -100,8 +105,8 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             showAboutDialog();
             return true;
         }  else if (id == R.id.action_choose_file) {
-//            openHtml();
-            chooseFile();
+            openHtml();
+//            chooseFile();
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -236,38 +241,61 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
     public static final int FILE_CHOOSER = 1; //инит
     public String lastSelectDirPath = Environment.getExternalStorageDirectory().getPath();//для kit-kat и новее
     public void openHtml() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
+                @Override
+                public void onPermissionsGranted(String[] permissions) throws SecurityException {
+                    openHtmlHelper();
+                }
+            }).whenPermissionsRefused(new PermissionsRefusedListener() {
+                @Override
+                public void onPermissionsRefused(String[] permissions) {
+                    Toast.makeText(getActivity(), "Allow external storage reading", Toast.LENGTH_SHORT).show();
+                }
+            }).execute(getActivity());
+        } else {
+            openHtmlHelper();
+        }
+
+    }
+
+    public void openHtmlHelper() {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {//для lollipop и новее
             Toast.makeText(getActivity(), R.string.ex_storage_prem, Toast.LENGTH_LONG).show();
             return;
         }
-        CharSequence[] items = new CharSequence[]{getString(R.string.fi_html)/*, "ЛЮБОЙ ДРУГОЙ ПУНКТ МЕНЮ"*/};
-        new MaterialDialog.Builder(getContext())
-                .items(items)
-                .itemsCallback(new MaterialDialog.ListCallback() {
-                    @Override
-                    public void onSelection(MaterialDialog dialog, View view, int i, CharSequence items) {
-                        switch (i) {
-                            case 0://вызываю GET_CONTENT
+        try {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_GET_CONTENT);//просит систему вызвать get_content
+//            intent.setType("text/html");// uri
+            intent.setType("*/*");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) //выпоняется только при sdk >=18
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+            intent.setDataAndType(Uri.parse/*loadUrl*/("file://" + lastSelectDirPath), "text/html");
+            startActivityForResult(intent, FILE_CHOOSER);
 
-                                try {
-                                    Intent intent = new Intent();
-                                    intent.setAction(Intent.ACTION_GET_CONTENT);//просит систему вызвать get_content
-                                    intent.setType("text/html");// uri
-                                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) //выпоняется только при sdk >=18
-                                        intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
-                                    intent.setDataAndType(Uri.parse/*loadUrl*/("file://" + lastSelectDirPath), "text/html");
-                                    startActivityForResult(intent, FILE_CHOOSER);
+        } catch (ActivityNotFoundException ex) {//если ни одно приложение не найдено
+            Toast.makeText(getActivity(), R.string.ex_not_found_fm, Toast.LENGTH_LONG).show();
+        } catch (Exception ex) {
+            AppLog.e(getActivity(), ex);//записывается в лог проги как ошибка
+        }
+    }
 
-                                } catch (ActivityNotFoundException ex) {//если ни одно приложение не найдено
-                                    Toast.makeText(getActivity(), R.string.ex_not_found_fm, Toast.LENGTH_LONG).show();
-                                } catch (Exception ex) {
-                                    AppLog.e(getActivity(), ex);//записывается в лог проги как ошибка
-                                }
-                                break;
-                        }
-                    }
-                })
-                .show();
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == FILE_CHOOSER && resultCode == Activity.RESULT_OK) {
+            String attachFilePath = FileUtils.getRealPathFromURI(getContext(), data.getData());
+
+            if (attachFilePath != null) {
+                Log.d("Path (fragment): ", attachFilePath);
+                loadUrl("file:///" + attachFilePath);
+                Log.e("Path (fragment): ", "file:///" + attachFilePath);
+            } else {
+                Log.e("Path (fragment): ", "NULL");
+            }
+        }
     }
 }
 

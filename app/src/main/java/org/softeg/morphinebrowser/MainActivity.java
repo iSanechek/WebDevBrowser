@@ -53,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
         String url = null;
         if (getIntent() != null) {
             url = getIntent().getDataString();
+            Log.e("Main Activity", "onCreate: " + url);
         }
+
+        Log.e("Main Activity", "onCreate: " + url);
         createFragment(url);
     }
 
@@ -132,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                             .withActivity(MainActivity.this)
                             .withRequestCode(FILE_PICKER_REQUEST_CODE)
                             .withHiddenFiles(true)
+                            .withPath(App.getHtmlFolder())
                             .start();
                 }
             }).whenPermissionsRefused(new PermissionsRefusedListener() {

@@ -247,12 +247,12 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         if (urls.size() != 0) {
             if (!checkUrlsDublicate(url, urls)) {
                 urls.add(0, new UrlItem(title, url));
-                tinyDB.clear();
+//                tinyDB.clear();
                 tinyDB.putListObject("SaveUrl", urls);
             }
         } else {
             urls.add(0, new UrlItem(title, url));
-            tinyDB.clear();
+//            tinyDB.clear();
             tinyDB.putListObject("SaveUrl", urls);
         }
     }

@@ -4,6 +4,7 @@ package org.softeg.morphinebrowser.pageviewcontrol.htmloutinterfaces;/*
 
 import android.app.Activity;
 import android.content.*;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.widget.Toast;
 
@@ -41,7 +42,7 @@ public class Developer implements IHtmlOut {
         return control.getActivity();
     }
 
-    private final static int FILECHOOSER_RESULTCODE = App.getInstance().getUniqueIntValue();
+    public final static int FILECHOOSER_RESULTCODE = App.getInstance().getUniqueIntValue();
 
     @JavascriptInterface
     public void showChooseCssDialog() {
@@ -91,11 +92,15 @@ public class Developer implements IHtmlOut {
                                  Intent data) {
 
         if (resultCode == Activity.RESULT_OK && requestCode == FILECHOOSER_RESULTCODE) {
+
+            Log.e("Developer", "onActivityResult: " + data.getDataString() + " " + data.getData().toString());
+
             String attachFilePath = FileUtils.getRealPathFromURI(getContext(), data.getData());
             String cssData = FileUtils.readFileText(attachFilePath)
                     .replace("\\", "\\\\")
                     .replace("'", "\\'").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "");
 
+            Log.e("Developer", "onActivityResult1: " + attachFilePath + " " + cssData);
 
             control.getWebView().evalJs("$('#dev-less-file-path')[0].value='" + attachFilePath + "';");
             control.getWebView().evalJs("window['HtmlInParseLessContent']('" + cssData + "');");

@@ -14,7 +14,7 @@ public class App extends Application {
     private static final String FOLDER_NAME = "DWDBHtml";
 
     private static App INSTANCE = null;
-    private static SharedPreferences preferences;
+    private SharedPreferences preferences;
 
     public App() {
         INSTANCE = this;
@@ -34,7 +34,7 @@ public class App extends Application {
         return m_AtomicInteger.incrementAndGet();
     }
 
-    public static SharedPreferences getPreferences() {
+    public SharedPreferences getPreferences() {
         if (preferences == null) {
             preferences = PreferenceManager.getDefaultSharedPreferences(INSTANCE.getApplicationContext());
         }
@@ -42,7 +42,7 @@ public class App extends Application {
     }
 
     public static String getHtmlFolder() {
-        return Environment.getExternalStorageDirectory() + "/" + FOLDER_NAME;
+        return Environment.getExternalStorageDirectory() + "/WDB";
     }
 
 }
