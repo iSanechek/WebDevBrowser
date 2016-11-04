@@ -177,10 +177,6 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         super.onViewCreated(view, savedInstanceState);
     }
 
-    public void reloadData() {
-
-    }
-
     @Override
     public void onClick(View view) {
 

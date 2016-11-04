@@ -134,6 +134,17 @@ public abstract class PageFragment extends PageViewFragment implements
     }
 
 
+    public void showElementsOutline() {
+        try {
+            mWebView.evalJs("showOutlineElements();");
+        } catch (Throwable throwable) {
+            AppLog.e(getActivity(), throwable);
+        }
+
+    }
+
+
+
     protected void showFontSizeDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
         changeText(getString(R.string.fontsize));

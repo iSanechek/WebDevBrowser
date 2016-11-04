@@ -112,12 +112,4 @@ public class Developer implements IHtmlOut {
         manager.setPrimaryClip(clipData);
         Toast.makeText(getActivity(), "Скопировал: " + text, Toast.LENGTH_SHORT).show();
     }
-
-
-    @JavascriptInterface
-    public void shoeElementsOutline() {
-
-    }
-
-
 }

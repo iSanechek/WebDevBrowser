@@ -105,7 +105,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             openHtml();
             return true;
         } else if (id == R.id.action_outline) {
-
+            showElementsOutline();
             return true;
         }
         return super.onOptionsItemSelected(item);
