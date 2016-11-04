@@ -41,5 +41,6 @@
     <string name="ex_sd">Проверьте доступность sd!</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="night_mode">Ночьной режим</string>
+    <string name="elements_outline">Границы элементов</string>
 
 </resources>

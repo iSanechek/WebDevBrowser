@@ -114,4 +114,10 @@ public class Developer implements IHtmlOut {
     }
 
 
+    @JavascriptInterface
+    public void shoeElementsOutline() {
+
+    }
+
+
 }
