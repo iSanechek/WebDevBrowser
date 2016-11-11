@@ -133,10 +133,12 @@ public abstract class PageFragment extends PageViewFragment implements
         }
     }
 
-
     public void showElementsOutline() {
         try {
-            mWebView.evalJs("showOutlineElements();");
+            mWebView.evalJs("if (!document.querySelector('.show-outline-elements')) {\n" +
+                    " var o = '<style class=\"show-outline-elements\">*,:before,:after{outline:1px solid rgba(255,100,0,0.6)}</style>';\n" +
+                    " document.body.insertAdjacentHTML(\"beforeEnd\",o);\n" +
+                    " } else document.body.removeChild(document.querySelector('.show-outline-elements'));");
         } catch (Throwable throwable) {
             AppLog.e(getActivity(), throwable);
         }
