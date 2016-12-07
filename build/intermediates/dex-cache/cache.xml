@@ -8,7 +8,25 @@
         optimize="true"
         revision="25.0.0"
         sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/bolts-tasks-1.4.0_dc7b77aab0654dd6a2e610e22118a8abe6a6e6f6.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_dc7b77aab0654dd6a2e610e22118a8abe6a6e6f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/dab7d56140cf87a3f5c9e4efd854864ebc58b02f/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.1_792723bc903a35f47e1825c1521284033811875c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/8e363730e9477c0061068973fdc4002631cd810d/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_b78a901be24db667d62e8e129376bcf9246f3668.jar" />
     </item>
     <item
         is-multidex="false"
@@ -17,61 +35,25 @@
         optimize="true"
         revision="25.0.0"
         sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/support-annotations-25.0.0_751174fe956e55033789245fdf3eef9ccebac388.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_751174fe956e55033789245fdf3eef9ccebac388.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/9925213b2b14ce07da33278f782575f28b013668/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-core-utils-25.0.0_2c379b67bd5729647d0d06cd6a32d3608e578496.jar" />
+        sha1="3b236883e0df6002cabb01ce57d00a5b1e5de610">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_bb39fb0ad811dc2b320380d3c76d8646f357f2fd.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.droidninja/filepicker/1.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/99dc9fe4ca22007f7330f58834fcf8846a83d802/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="be9340c6b0bf6d4015fe5ae5ebb00bbf5e06c40c">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.droidninja-filepicker-1.0.0_349172a83465fa97af9dfe004b212cdc92b2cd23.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-fragment-25.0.0_06ae9b985e08e90ed45e2d936a259a1dccd8058c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/core/0.8.6.2/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="cbdf1602ce622f3445dc7513237f30930c6e4a5a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.afollestad.material-dialogs-core-0.8.6.2_cb5199b3c20982d33890008cf749e28cdde86a81.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/0.12.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fbcore-0.12.0_afc9ac069393dd0aa7c9e0c7772e5ea7edec2a30.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/0.12.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-0.12.0_024b30621ac6eb4a6c5f19bebc40868f278661bf.jar" />
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_d2ae685da5f6ff5337a3821d84deaa16d51c6d28.jar" />
     </item>
     <item
         is-multidex="false"
@@ -80,160 +62,367 @@
         optimize="true"
         revision="25.0.0"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/library-2.4.0_5120a6d28a3469433c4c468dd8ab06d27e65ec07.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/library-2.4.0_5120a6d28a3469433c4c468dd8ab06d27e65ec07.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/me.zhanghai.android.materialprogressbar/library/1.1.7/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/51283663e208bb0f591672f85229c2f3696d6ad0/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/me.zhanghai.android.materialprogressbar-library-1.1.7_fad25a84dff2c02db16a637a6d6ff8f5d22f2e81.jar" />
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_af4642ac85f9830732793d78d2207fee367780b3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/df0832191d65e7a0f5338549d55e74f7207f608a/output/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-animated-vector-drawable-25.0.0_5f3212b7ffade10612d54f3513cf1b5f917e45d8.jar" />
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.1_5f99eed0054c7b6f3d3e4d6c171660e11f7026fe.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.0_f27dca9430d8f44bf5a32d0f645fac8f128477e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/ab2f71d2ac5ae43f4431a28a80f3a7947cbea979/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-design-25.0.0_26380d8a523a11ec945416f4c73781537852538b.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_cccacfda4e80f7c4cb093587fd508db86bed1229.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/5b0c99c881fb2cb981f32f3456a139fb4b925218/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-appcompat-v7-25.0.0_0c938138556b1869b5ce1f32088338b6aceec50a.jar" />
+        sha1="145da27a459a63ea0c4e318930365cf0a8b8e891">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_fee43f9d27960828581aa7513a3ea1ae261ed7b4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/0.12.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/963ab1b0956f01d064f6ac632a26af4c0730a62e/output/jars/libs/internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-imagepipeline-base-0.12.0_1221811510dfb1663190a3482a860bc902ccd6d4.jar" />
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.1_7da6640b99a8a0d54f9bab06b8ffe5147f56c4a2.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/6530b8998f41ef286590f3c97fb218d0296a1862/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="b2dbfe7bacc123fbaded7cc20cd0be11ca052397">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/org.zakariya.flyoutmenus-flyoutmenu-0.5.3_b913547321e3fbfb08f0d6ba7d2c4cd55fb7150f.jar" />
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_93ba8ce07de6da069b9ad64c5b32531853952f4f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.0_79b341d050082603b37823bff75b76cbf2bdf90b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-v4-25.0.0_7e846de53a108dda470d4af708f517a2f2941463.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/0.12.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/dce10af09fe370e94ad8b314b08c461dc3d4c077/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="a540784239c611ea490593e2053a5e2890675c68">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-fresco-0.12.0_bd4d96935c858670ee77372703f44c751eb15f97.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_e8b092a40315b1c259d9ca679f8778febd59d17f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.0_45b3be8c2a1c2acd1103185864145fd63848b1de.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/org.adw.library/discrete-seekbar/1.0.1/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/065d153594a4203c9b94b2417b52d88098762b32/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="7be042dd2aa8157a2b63934902f472952d2ea1fe">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/org.adw.library-discrete-seekbar-1.0.1_017207b9f992efe657c931132b83a602382b26e6.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_65ac0d6a4d97bffa5be33e69002eedfa224b1d3e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/963ab1b0956f01d064f6ac632a26af4c0730a62e/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-recyclerview-v7-25.0.0_275917674b180b5829d79a5ccb2436d259ee3f1b.jar" />
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_79bcf611b76382366f2003cfb4f48ff2585db647.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/0.12.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/d2557a17ada319a78770d0e119b8bbb099d2f3cd/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="1e346707e4770db216049a532ab3eb5e317cf82a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.facebook.fresco-drawee-0.12.0_0250ebc112003194c374863850a41e061cf8cae5.jar" />
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_86e08f61e7c301e3fa37beea8fa6394f06a47148.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/ed37aec9d258fa789ee567a3525da141cac90dd5/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-core-ui-25.0.0_0cd6ee8c9b22cade2275faad1d73eaf2588d28d7.jar" />
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_d3d639613fb025d6eedbfadba5b9162986aa11f2.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/home/isanechek/.android/build-cache/189714f84970bbd4e96953a7803fbdc51e767f37/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.0_72d5975a3e8531b75e000c2bcd52ee8f52c4bdcf.jar" />
+        sha1="d03cbe00a6703cfa62ae868707af59d41aff2140">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_3de126b50998de03f4dba27f3263fb45def6a9cf.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/6b52f457c90737bc0d60716d39b9dcd047dafbaa/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
         sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-transition-25.0.0_3aecaf93696fd4cf4824c2bff3681227096f2c60.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_c87fb582aa3178419aa3945c65df8c866726d453.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/a0f318c1f6b73373c98198036350d16b8c7274a2/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1e346707e4770db216049a532ab3eb5e317cf82a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_85b704278f11096e38542bc7927b0dde0085162f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/7b48bdd0b5cec9a705e03198fd0f9da47e7d58ba/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b2dbfe7bacc123fbaded7cc20cd0be11ca052397">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_9a2523ece7b6bf3afddff797e3df731437fdc812.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/d247c7e1ce33c86670bd6fdac6ce9fd6f65b365b/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.1_b177c832b15570df574a87961202c8335265dc79.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/95bb6d8819d2d4edc2c07aae0c5bc795f1161abd/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="40e5cb8708fc25fe57cb403cc82e9ef98376b648">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_ce12db48774790c9061287e84e8340149d4973ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/4d3992355af64b42623bc7b1d489f68e09549084/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_956646b3b16a1138c5936a012b381d27277d15cd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/8b8df080b6356e2226cb5cf5173f56455077c4ab/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="38955f75e5bdc80a7856eccbd256f75c1bc4bb41">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_bdc335da9d74b6079b118d8d8cd63ae8ff7ae2ad.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/2765ecf4e46ac77df995c38580a9bb7917a1b365/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_2d2da52003327de6891328aca41b68098e7d52a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/edcdd078d5ff79e1c5da0f5d6f280d771bfe093b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="297d4bcf6ed4e747a1bf7d0d094a2d911a8d3a8e">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_ca05ec34046b03a750e9da12299b5a83202dadc0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/ed37aec9d258fa789ee567a3525da141cac90dd5/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_b484d8e110039b10db3308d82d6a3e97b94f52d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/dab7d56140cf87a3f5c9e4efd854864ebc58b02f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_4eb97c0a532fb4999a7c45212aef2fc9fb0f7f59.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/6530b8998f41ef286590f3c97fb218d0296a1862/output/jars/libs/internal_impl-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.1_33cbc971a7f03323162cddc3a4d484077540514e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/ba6b71131bcf580119e1e4ef01bb1f5005d9f285/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_e300e63e13944d00c2c8e7cf8ce86ee14af9ea04.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/2e4caa73447b888c899647a437aa2c6db609a0f8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_3694e9b87cbe57bb049c0026593e31d40c1ea937.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/5d5943755385387b2cf4159dee601c3503305b90/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_482f2abd64cda2c89d847da9d8b773dd517a485a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/3acde10da349da27a55c8eb6315059002b50d032/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_cf14e41bcfcce875ffd8b8c887873cdf1da0d337.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/e32be45f3f61f25a69d9024be0f8ea0d5a8075ca/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c1b6ab157e8e12cb08b9ee82bb5e3c5d22632eb3">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_e590e91b61ed1bbe3e5f3c7dfd38d774906cd15b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/9d01a8169442cda48c766c43867ee3dd78bf975a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="be9340c6b0bf6d4015fe5ae5ebb00bbf5e06c40c">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_56c9cd38543b3cd76d143b3f13eb5e1cd1f015fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/5e7c47ffa2332b6ec2bab2ca3fa630fc174c304f/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_825b8d4d6947c071b5be83217f14118e19f7cbaf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/df0832191d65e7a0f5338549d55e74f7207f608a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_ea4fc65c52cdd08c7f0d01b6ba2c07af8b5092eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/3acde10da349da27a55c8eb6315059002b50d032/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_4e79be5d7d115697494a07c8a8b4891e6e3e45f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/5e7c47ffa2332b6ec2bab2ca3fa630fc174c304f/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_bd98958f8f34b336174cb43d1e9bdd396b91660d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/9ea0b75fc2326bc53bb213f96b92ebdf12f9621b/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_f58ec4b90cc7527ab13f14ebe8c2dab11887d0ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/5f9d9d698357e83adeda1b82366813e4e5b733fe/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1478a113f04bf0b679037b4f6bd88bd1837b96a3">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_f402fce744dd6dfcb6420f77a89704e123d7f09c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.1/support-annotations-25.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/support-annotations-25.0.1_de00e110191afe2a6a5fa8bbe89907af6c883069.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/ba6b71131bcf580119e1e4ef01bb1f5005d9f285/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_a4f3aebad980b66279dceb62ba11499664e701e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/c0c8ab788a311ed762261af76ecff625a196acd8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_4fc4af748ebf75e3162f28bb325fd6ee4d2d2050.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/isanechek/.android/build-cache/51283663e208bb0f591672f85229c2f3696d6ad0/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_2052658d13afdd764eae5931a38592b1a86d1c83.jar" />
     </item>
     <item
         is-multidex="false"
@@ -242,43 +431,25 @@
         optimize="true"
         revision="25.0.0"
         sha1="c01c8680abc54727415bf51ca3a404356f43674a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/permissive-0.1_3c196283214854fde80421cc1d5c7f9e92870862.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/permissive-0.1_3c196283214854fde80421cc1d5c7f9e92870862.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/home/isanechek/.android/build-cache/bf2d3dc825bd79149dc9315ff9c22caa702ad3d6/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/internal_impl-25.0.0_8e74194e9fc5ba8e077565601d11fc26d3500cb0.jar" />
+        sha1="c9a86e6bc8300fc00c191949ac61a2f7165e35c7">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_e318993ff046b5455ced3d17512e66caf66bd3c4.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/18032473f372ce07054dda5b8bcc8b286af2d85b/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="8a372c4191f80489770a231f7be4820b204b886a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-cardview-v7-25.0.0_aadc1e6ebdb86b872d5c3e06112867c95cb6206f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/ch.acra/acra/4.9.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="d03cbe00a6703cfa62ae868707af59d41aff2140">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/ch.acra-acra-4.9.0_8c8e5f358ffddb9100ef92471da8bbddadb5fe15.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-media-compat-25.0.0_8db99ed3f7d1608de4f4be2764766551847fe313.jar" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_1024eee08755d3c66fef448c61de5cf916982da2.jar" />
     </item>
     <item
         is-multidex="false"
@@ -287,34 +458,34 @@
         optimize="true"
         revision="25.0.0"
         sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/gson-2.4_96fa70396d5486aac5affca5b55eae2ab08f38d0.jar" />
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/gson-2.4_96fa70396d5486aac5affca5b55eae2ab08f38d0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/5b1680587c18b965f1b11d8b058eafcfcb2da51c/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-compat-25.0.0_7bb99e2dea877dd080fb6cd4d33934df1f2b927a.jar" />
+        sha1="cbdf1602ce622f3445dc7513237f30930c6e4a5a">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_03f00dc5e6712ff7a4e9265589473ae4efe7cb46.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.afollestad.material-dialogs/commons/0.8.6.2/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/54aee2534512d30e3e4057d949d8d6880f107126/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="38955f75e5bdc80a7856eccbd256f75c1bc4bb41">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.afollestad.material-dialogs-commons-0.8.6.2_3b5c5123d0593021a51f02b2613a2747c4a42d55.jar" />
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/debug/classes_a57de02b4173b27808727c505172680ae62be47e.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/home/isanechek/.android/build-cache/d247c7e1ce33c86670bd6fdac6ce9fd6f65b365b/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.0"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/home/isanechek/AndroidStudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/com.android.support-support-vector-drawable-25.0.0_ecb4c745d6012606a70162e56f9c2e36838d416d.jar" />
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="/home/isanechek/StudioProjects/WebDevBrowser/app/build/intermediates/pre-dexed/release/classes_4ded846dcb4c264ff1aae60e242147df4010b63f.jar" />
     </item>
 
 </items>

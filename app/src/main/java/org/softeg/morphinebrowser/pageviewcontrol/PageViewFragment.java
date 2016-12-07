@@ -154,6 +154,9 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
      * Понять и простить
      */
 
+    protected String getGlobalUrl() {
+        return globalUrl;
+    }
 
     protected void changeText(String text) {
         if (getActivity() != null) {

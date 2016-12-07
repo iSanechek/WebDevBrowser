@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="flyoutmenu-0.5.3">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/org.zakariya.flyoutmenus/flyoutmenu/0.5.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/7b48bdd0b5cec9a705e03198fd0f9da47e7d58ba/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/7b48bdd0b5cec9a705e03198fd0f9da47e7d58ba/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

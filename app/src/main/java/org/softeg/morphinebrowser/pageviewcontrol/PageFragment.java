@@ -285,7 +285,7 @@ public abstract class PageFragment extends PageViewFragment implements
         View v = getActivity().getLayoutInflater().inflate(R.layout.dialog_urls, null);
         assert  v != null;
         editText = (EditText) v.findViewById(R.id.editText);
-        editText.setText(globalUrl);
+        editText.setText(getGlobalUrl());
 
         final ListView listView = (ListView) v.findViewById(R.id.list_urls);
 
@@ -307,22 +307,11 @@ public abstract class PageFragment extends PageViewFragment implements
             }
         });
 
-//        v.findViewById(R.id.go_btn).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                String url = editText.getText().toString();
-//                if (!TextUtils.isEmpty(url)) {
-//                    loadUrl(url);
-//                    dialog.dismiss();
-//                }
-//            }
-//        });
-
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 boolean state = false;
-                if (actionId == EditorInfo.IME_ACTION_GO) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) ||(actionId == EditorInfo.IME_ACTION_GO)) {
                     String link = editText.getText().toString();
                     if (link != null) {
                         loadUrl(link);

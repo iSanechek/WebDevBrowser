@@ -2,6 +2,7 @@ package org.softeg.morphinebrowser.pageviewcontrol;
 
 import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
