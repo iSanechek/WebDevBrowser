@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textDate"
+        android:layout_gravity="left|center_vertical"
+        android:layout_alignParentLeft="true"
+        tools:text="2017-10-12 22:11:10.123" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textTag"
+        android:layout_gravity="right|center_vertical"
+        android:layout_alignParentRight="true"
+        tools:text="I/LogcatViewer" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/textMessage"
+        android:layout_below="@+id/textDate"
+        android:paddingTop="4dp"
+        tools:text="There was an exception in the LogcatView. We could not show this fine little message here!"/>
+</RelativeLayout>

@@ -7,17 +7,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.transitionseverywhere.TransitionManager;
+
+import org.softeg.morphinebrowser.bus.Args;
+import org.softeg.morphinebrowser.bus.EventCallback;
+import org.softeg.morphinebrowser.bus.FastEvent;
 import org.softeg.morphinebrowser.controls.AppWebView;
+import org.softeg.morphinebrowser.logcat.LogFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
     private TextView toolbar_title;
-    private HistoryFragment historyFragment;
+    private LogFragment logFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         // Инициализирую Toolbar
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         toolbar_title = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        clearTitle(null);
+        toolbar_title.setText(R.string.app_name);
         toolbar_title.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,12 +52,57 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Log.e("Main Activity", "onCreate: " + url);
-
         createFragment(url);
     }
 
-    private void createFragment(String uri) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initializeBus();
+    }
 
+    private void initializeBus() {
+        FastEvent.on(Constants.SHOW_LOG_FRAGMENT)
+                .onUi(MainActivity.this)
+                .execute(new EventCallback() {
+                    @Override
+                    public void onEvent(Args args) {
+                        ViewGroup group = (ViewGroup) findViewById(R.id.root_layout);
+                        TransitionManager.beginDelayedTransition(group);
+                        View view = findViewById(R.id.log_fragment_container);
+                        view.setVisibility(args.get(0) ? View.VISIBLE : View.GONE);
+                        if (args.get(0)) {
+                            view.setVisibility(View.VISIBLE);
+                            logFragment = new LogFragment();
+                            getSupportFragmentManager()
+                                    .beginTransaction()
+                                    .replace(R.id.log_fragment_container, logFragment)
+                                    .commit();
+                        } else {
+                            view.setVisibility(View.GONE);
+                            if (logFragment != null) {
+                                getSupportFragmentManager()
+                                        .beginTransaction()
+                                        .remove(logFragment)
+                                        .commit();
+                            }
+                        }
+                    }
+                });
+
+        FastEvent.on(Constants.TOOLBAR_TITLE)
+                .onUi(MainActivity.this)
+                .execute(new EventCallback() {
+                    @Override
+                    public void onEvent(Args args) {
+                        toolbar_title.setText(args.get(0).toString());
+                    }
+                });
+
+
+    }
+
+    private void createFragment(String uri) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.topic_fragment_container, WebFragment.getInstance(uri), WebFragment.ID)
@@ -63,53 +114,10 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         AppWebView webView = ((WebFragment)getSupportFragmentManager().findFragmentById(R.id.topic_fragment_container)).getWebView();
-           /* if(drawerResult.isDrawerOpen()){
-            drawerResult.closeDrawer();
-        }*/
         if (webView!=null && webView.canGoBack()) {
             webView.goBack();
         }else {
             super.onBackPressed();
         }
-    }
-
-    public void showFragmentHistory(String url) {
-        historyFragment = HistoryFragment.newInstance(url);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.topic_fragment_container, historyFragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commit();
-    }
-
-    public void hideFragmentHistory(String url) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .hide(historyFragment)
-                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
-                .commit();
-        createFragment(url);
-    }
-
-    /**
-     * Понять и простить
-     */
-
-    public void showProgress(boolean show) {
-        if (show)
-            toolbar_title.setText("Загрузка...");
-        else
-            clearTitle(null);
-    }
-
-    public void changeTitle(String text) {
-        toolbar_title.setText(text);
-    }
-
-    public void clearTitle(String title) {
-        if (title == null)
-            toolbar_title.setText(R.string.app_name);
-        else
-            toolbar_title.setText(title);
     }
 }

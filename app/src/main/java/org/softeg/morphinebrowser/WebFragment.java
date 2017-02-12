@@ -16,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
@@ -28,6 +29,7 @@ import com.github.jksiezni.permissive.PermissionsRefusedListener;
 import com.github.jksiezni.permissive.Permissive;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
+import org.softeg.morphinebrowser.bus.FastEvent;
 import org.softeg.morphinebrowser.common.FileUtils;
 import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
 
@@ -37,6 +39,7 @@ import org.softeg.morphinebrowser.pageviewcontrol.PageFragment;
 public class WebFragment extends PageFragment /*implements FileChooserDialog.FileCallback*/{
     private static final String URL_KEY = "WebFragment.URL";
     private int progressValueWidtPage;
+    private boolean mLogShown;
 
     public static Fragment getInstance(String url) {
         Bundle args = new Bundle();
@@ -107,13 +110,27 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         } else if (id == R.id.action_outline) {
             showElementsOutline();
             return true;
+        } else if (id == R.id.show_log) {
+            Log.e("TEST", "click");
+            if (!mLogShown) {
+                // show
+                Log.e("TEST", "click1");
+                mLogShown = true;
+                FastEvent.emit(Constants.SHOW_LOG_FRAGMENT, true);
+            } else if (mLogShown) {
+                // hide
+                Log.e("TEST", "click2");
+                mLogShown = false;
+                FastEvent.emit(Constants.SHOW_LOG_FRAGMENT, false);
+            }
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void showWidthDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
-        changeText(getString(R.string.scr_w));
+        FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.scr_w));
         if (AppPreferences.isFirstStart()) {
             showWarningDialog();
         }
@@ -218,7 +235,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                clearText();
+                FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.app_name));
                 AppPreferences.setPageWidthSize(progressValueWidtPage);
                 log("Web Fragment", "Save Page Width Size: " + progressValueWidtPage);
             }

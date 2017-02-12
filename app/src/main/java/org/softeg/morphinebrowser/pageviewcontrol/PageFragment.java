@@ -31,7 +31,9 @@ import com.github.jksiezni.permissive.Permissive;
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
+import org.softeg.morphinebrowser.Constants;
 import org.softeg.morphinebrowser.R;
+import org.softeg.morphinebrowser.bus.FastEvent;
 import org.softeg.morphinebrowser.common.UrlExtensions;
 import org.softeg.morphinebrowser.other.UrlItem;
 import org.softeg.morphinebrowser.other.UrlsAdapter;
@@ -149,8 +151,7 @@ public abstract class PageFragment extends PageViewFragment implements
 
     protected void showFontSizeDialog() {
         View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
-        changeText(getString(R.string.fontsize));
-
+        FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.fontsize));
         Log.e(TAG, "showFontSizeDialog: ");
         int size = getWebView().getSettings().getDefaultFontSize();
         Log.e(TAG, "Default Font Size: " + size);
@@ -235,7 +236,7 @@ public abstract class PageFragment extends PageViewFragment implements
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                clearText();
+                FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.app_name));
                 AppPreferences.setWebViewFontSize(sb.getProgress());
             }
         });

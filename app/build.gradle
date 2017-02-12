@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.2"
 
     dexOptions {
         dexInProcess = true
@@ -13,18 +13,28 @@ android {
         applicationId "org.softeg.morphinebrowser"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 42
-        versionName "1.3.5.7"
+        versionCode 48
+        versionName "1.3.5.8"
         vectorDrawables.useSupportLibrary = true
+        project.ext.set("archivesBaseName", "WDB-" + defaultConfig.versionName)
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_6
-        targetCompatibility JavaVersion.VERSION_1_6
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
     buildTypes {
         release {
 
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+        t {
+            applicationId 'org.softeg.morphinebrowser.test'
+        }
+
+        rel {
+            applicationId 'org.softeg.morphinebrowser'
         }
     }
     signingConfigs {
@@ -45,13 +55,13 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.8.6.2'
     compile 'com.afollestad.material-dialogs:commons:0.8.6.2'
     compile 'ch.acra:acra:4.9.0'
-    compile 'com.android.support:support-v4:25.0.1'
-    compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support:design:25.0.1'
-    compile 'com.android.support:cardview-v7:25.0.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.android.support:cardview-v7:25.1.1'
     compile 'com.droidninja:filepicker:1.0.0'
     compile 'org.adw.library:discrete-seekbar:1.0.1'
-    compile 'org.zakariya.flyoutmenus:flyoutmenu:0.5.3'
-    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.code.gson:gson:2.7'
     compile 'com.github.jksiezni.permissive:permissive:0.1'
+    compile "com.andkulikov:transitionseverywhere:1.7.0"
 }

@@ -81,6 +81,7 @@
                 <data android:pathPattern=".*\\.html" />
             </intent-filter>
         </activity>
+        <service android:name="org.softeg.morphinebrowser.logcat.LogHandlerService" />
     </application>
 
 </manifest>

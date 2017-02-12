@@ -1,10 +1,12 @@
 package org.softeg.morphinebrowser.pageviewcontrol;
 
 import android.graphics.Bitmap;
-import android.text.TextUtils;
-import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import org.softeg.morphinebrowser.bus.FastEvent;
+
+import static org.softeg.morphinebrowser.Constants.TOOLBAR_TITLE;
 
 
 /*
@@ -22,17 +24,18 @@ class AppWebViewClient extends WebViewClient {
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
 
-        listener.setSupportProgressBarIndeterminateVisibility(true);
+        FastEvent.emit(TOOLBAR_TITLE, "Загрузка...");
+//        listener.setSupportProgressBarIndeterminateVisibility(true);
         //ThemeActivity.this.setProgressBarIndeterminateVisibility(true);
     }
 
     @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
-        listener.setSupportProgressBarIndeterminateVisibility(false);
-        if (!TextUtils.isEmpty(view.getTitle())) {
-            listener.setPageTitle(view.getTitle(), url);
-        }
+        FastEvent.emit(TOOLBAR_TITLE, view.getTitle());
+//        if (!TextUtils.isEmpty(view.getTitle())) {
+//            listener.setPageTitle(view.getTitle(), url);
+//        }
     }
 /*
     @Override

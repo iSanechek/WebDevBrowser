@@ -47,6 +47,11 @@
         android:orderInCategory="100"
         app:showAsAction="never"
         android:icon="@drawable/ic_content_save_white_24dp"/>
+    <item android:id="@+id/show_log"
+        android:title="Logging"
+        android:orderInCategory="100"
+        app:showAsAction="never"
+        tools:ignore="HardcodedText" />
     <item android:id="@+id/action_about"
         android:title="@string/about_program"
         android:orderInCategory="100"

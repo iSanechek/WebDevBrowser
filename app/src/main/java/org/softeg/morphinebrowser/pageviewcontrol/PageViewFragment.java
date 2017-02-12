@@ -13,13 +13,14 @@ import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebSettings;
+import android.webkit.ConsoleMessage;
 import android.widget.RelativeLayout;
 
 import org.softeg.morphinebrowser.AppLog;
 import org.softeg.morphinebrowser.AppPreferences;
-import org.softeg.morphinebrowser.MainActivity;
+import org.softeg.morphinebrowser.Constants;
 import org.softeg.morphinebrowser.R;
+import org.softeg.morphinebrowser.bus.FastEvent;
 import org.softeg.morphinebrowser.controls.AppWebView;
 import org.softeg.morphinebrowser.other.TinyDB;
 import org.softeg.morphinebrowser.other.UrlItem;
@@ -34,7 +35,6 @@ import java.util.ArrayList;
 public class PageViewFragment extends Fragment implements View.OnClickListener, IWebViewClientListener {
     protected AppWebView mWebView;
     protected String globalUrl;
-    private String pageTitle = null;
     protected TinyDB tinyDB;
 
     protected void log(String tag, String text) {
@@ -92,7 +92,16 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         mWebView.initTopicPageWebView();
         if(autoHideActionBar())
             setHideActionBar();
-        mWebView.setWebChromeClient(new AppWebChromeClient());
+        mWebView.setWebChromeClient(new AppWebChromeClient() {
+            @Override
+            public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+                FastEvent.emit(Constants.LOG_FRAGMENT, consoleMessage);
+                Log.d("JS", "lineNumber " + consoleMessage.lineNumber()
+                        + "message " + consoleMessage.message()
+                        + "messageLevel " + consoleMessage.messageLevel());
+                return true;
+            }
+        });
         mWebView.setWebViewClient(new AppWebViewClient(this));
         if (getActivity() != null && getActivity().getActionBar() != null)
             mWebView.setActionBarheight(getActivity().getActionBar().getHeight());
@@ -101,7 +110,6 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         mWebView.getSettings().getTextZoom();
 
         tinyDB = new TinyDB(getActivity());
-
         return v;
     }
 
@@ -133,46 +141,8 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
         return this;
     }
 
-    public void setSupportProgressBarIndeterminateVisibility(boolean b) {
-        if (getActivity() != null)
-            ((MainActivity)getActivity()).showProgress(b);
-
-    }
-
-    @Override
-    public void setPageTitle(String title, String url) {
-        saveUrl(title, url);
-        if (getActivity() != null) {
-            if (title != null) {
-                pageTitle = title;
-                ((MainActivity)getActivity()).changeTitle(title);
-            }
-        }
-    }
-
-    /**
-     * Понять и простить
-     */
-
     protected String getGlobalUrl() {
         return globalUrl;
-    }
-
-    protected void changeText(String text) {
-        if (getActivity() != null) {
-            ((MainActivity)getActivity()).changeTitle(text);
-        }
-    }
-
-    public void clearText() {
-        if (getActivity() != null)
-            ((MainActivity)getActivity()).clearTitle(pageTitle);
-    }
-
-    public void showHistoryFragment(String url) {
-        if (getActivity() != null) {
-            ((MainActivity)getActivity()).showFragmentHistory(url);
-        }
     }
 
     @Override
