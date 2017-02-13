@@ -43,4 +43,13 @@
     <string name="night_mode">Ночьной режим</string>
     <string name="elements_outline">Границы элементов</string>
 
+    <string-array name="logPrioritet">
+        <item>VERBOSE</item>
+        <item>DEBUG</item>
+        <item>INFO</item>
+        <item>WARNING</item>
+        <item>ERROR</item>
+        <item>FATAL</item>
+    </string-array>
+
 </resources>

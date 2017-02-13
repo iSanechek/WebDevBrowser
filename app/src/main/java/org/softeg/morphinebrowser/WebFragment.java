@@ -111,15 +111,12 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             showElementsOutline();
             return true;
         } else if (id == R.id.show_log) {
-            Log.e("TEST", "click");
             if (!mLogShown) {
                 // show
-                Log.e("TEST", "click1");
                 mLogShown = true;
                 FastEvent.emit(Constants.SHOW_LOG_FRAGMENT, true);
             } else if (mLogShown) {
                 // hide
-                Log.e("TEST", "click2");
                 mLogShown = false;
                 FastEvent.emit(Constants.SHOW_LOG_FRAGMENT, false);
             }

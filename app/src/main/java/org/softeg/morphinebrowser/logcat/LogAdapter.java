@@ -41,6 +41,8 @@ public class LogAdapter extends BaseAdapter {
         mItems = items;
     }
 
+    public void removeAll() { if (mItems.size() > 0) { mItems.clear(); } }
+
     @Override
     public int getCount() {
         return mItems.size();

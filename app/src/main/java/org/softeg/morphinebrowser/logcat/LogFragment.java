@@ -11,9 +11,12 @@ import android.util.SparseBooleanArray;
 import android.view.ActionMode;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ListView;
 import android.widget.ShareActionProvider;
+
+import com.afollestad.materialdialogs.MaterialDialog;
 
 import org.softeg.morphinebrowser.R;
 
@@ -41,8 +44,7 @@ public class LogFragment extends ListFragment implements LogHandler.OnLogItemRea
         else {
             mLogLevel = Priority.VERBOSE;
         }
-
-        setHasOptionsMenu(true);
+        huemoe();
     }
 
     @Override
@@ -60,8 +62,6 @@ public class LogFragment extends ListFragment implements LogHandler.OnLogItemRea
         if(context != null) {
             context.bindService(new Intent(context, LogHandlerService.class), mServiceConnection, Context.BIND_AUTO_CREATE);
         }
-
-//        filter(Priority.VERBOSE);
     }
 
     private ServiceConnection mServiceConnection = new ServiceConnection() {
@@ -118,95 +118,60 @@ public class LogFragment extends ListFragment implements LogHandler.OnLogItemRea
         }
     }
 
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        super.onCreateOptionsMenu(menu, inflater);
-//
-//        inflater.inflate(R.menu.org.softeg.morphinebrowser.logcat, menu);
-//    }
+    private void huemoe() {
+        if (getActivity().findViewById(R.id.bottom_container).getVisibility() == View.VISIBLE) {
+            getActivity().findViewById(R.id.update_log_btn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    loadItems();
+                }
+            });
 
-//    @Override
-//    public void onPrepareOptionsMenu(Menu menu) {
-//        super.onPrepareOptionsMenu(menu);
-//
-//        MenuItem item = menu.findItem(R.id.action_loglevel);
-//
-//        if(item == null)
-//            throw new UnsupportedOperationException("loglevel menu item can't be found!");
-//
-//        item.setTitle(getString(R.string.loglevel) + ": " + mLogLevel);
-//
-//        switch (mLogLevel) {
-//            case VERBOSE:
-//                checkItem(menu, R.id.action_loglevel_verbose);
-//                break;
-//            case DEBUG:
-//                checkItem(menu, R.id.action_loglevel_debug);
-//                break;
-//            case INFO:
-//                checkItem(menu, R.id.action_loglevel_info);
-//                break;
-//            case WARNING:
-//                checkItem(menu, R.id.action_loglevel_warn);
-//                break;
-//            case ERROR:
-//                checkItem(menu, R.id.action_loglevel_error);
-//                break;
-//            case FATAL:
-//                checkItem(menu, R.id.action_loglevel_assert);
-//                break;
-//            default:
-//                item.setTitle(R.string.loglevel);
-//                break;
-//        }
-//    }
-
-    private void checkItem(Menu menu, int id) {
-        MenuItem item = menu.findItem(id);
-        if(item == null)
-            throw new IllegalStateException("Menu item was not found!");
-
-        item.setChecked(true);
+            getActivity().findViewById(R.id.log_prioritet_btn).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new MaterialDialog.Builder(getActivity())
+                            .title("Приоритет")
+                            .items(R.array.logPrioritet)
+                            .itemsCallback(new MaterialDialog.ListCallback() {
+                                @Override
+                                public void onSelection(MaterialDialog dialog, View view, int which, CharSequence text) {
+//                                    showToast(which + ": " + text);
+                                    switch (which) {
+                                        case 0:
+                                            filter(Priority.VERBOSE);
+                                            break;
+                                        case 1:
+                                            filter(Priority.DEBUG);
+                                            break;
+                                        case 2:
+                                            filter(Priority.INFO);
+                                            break;
+                                        case 3:
+                                            filter(Priority.WARNING);
+                                            break;
+                                        case 4:
+                                            filter(Priority.ERROR);
+                                            break;
+                                        case 5:
+                                            filter(Priority.FATAL);
+                                            break;
+                                        default:
+                                            break;
+                                    }
+                                }
+                            })
+                            .show();
+                }
+            });
+        }
     }
 
     private void filter(Priority priority) {
         mLogLevel = priority;
         loadItems();
-//        Activity activity = getActivity();
-//        if(activity != null)
-//            activity.invalidateOptionsMenu();
     }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        if(item.getItemId() == R.id.action_loglevel_verbose) {
-//            filter(Priority.VERBOSE);
-//            item.setChecked(true);
-//            return true;
-//        } else if(item.getItemId() == R.id.action_loglevel_debug) {
-//            filter(Priority.DEBUG);
-//            item.setChecked(true);
-//            return true;
-//        } else if(item.getItemId() == R.id.action_loglevel_info) {
-//            filter(Priority.INFO);
-//            item.setChecked(true);
-//            return true;
-//        } else if(item.getItemId() == R.id.action_loglevel_warn) {
-//            filter(Priority.WARNING);
-//            item.setChecked(true);
-//            return true;
-//        } else if(item.getItemId() == R.id.action_loglevel_error) {
-//            filter(Priority.ERROR);
-//            item.setChecked(true);
-//            return true;
-//        } else if(item.getItemId() == R.id.action_loglevel_assert) {
-//            filter(Priority.FATAL);
-//            item.setChecked(true);
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
+
 
     protected List<LogItem> getCheckedItems() throws IllegalStateException {
         ListView listView = getListView();
@@ -264,46 +229,4 @@ public class LogFragment extends ListFragment implements LogHandler.OnLogItemRea
     public void onDestroyActionMode(ActionMode actionMode) {
 
     }
-
-//    @Override
-//    public void onItemCheckedStateChanged(ActionMode mode, int position, long id, boolean checked) {
-//        try {
-//            mShareActionProvider.setShareIntent(getShareIntent());
-//        }
-//        catch (Exception e) {
-//            Log.e("LogFragment", "Error when creating intent for shareActionProvider");
-//        }
-//    }
-//
-//    @Override
-//    public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-//        Activity activity = getActivity();
-//        if(activity == null)
-//            return false;
-//
-//        MenuInflater inflater = activity.getMenuInflater();
-//        inflater.inflate(R.menu.logcat_actionmode, menu);
-//
-//        MenuItem item = menu.findItem(R.id.action_share);
-//        if(item == null)
-//            throw new IllegalStateException("share action not in menu!");
-//
-//        mShareActionProvider = (ShareActionProvider) item.getActionProvider();
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-//        return false;
-//    }
-//
-//    @Override
-//    public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-//        return false;
-//    }
-//
-//    @Override
-//    public void onDestroyActionMode(ActionMode mode) {
-//
-//    }
 }
