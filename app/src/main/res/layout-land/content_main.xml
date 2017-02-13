@@ -13,7 +13,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:layout="@layout/activity_main">
     <FrameLayout
@@ -23,8 +23,8 @@
         android:layout_weight="1"/>
     <View
         android:id="@+id/bord"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
         android:background="@android:color/darker_gray"
         android:visibility="gone"/>
 
@@ -32,7 +32,7 @@
         android:id="@+id/bottom_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1.75"
+        android:layout_weight="1.15"
         android:orientation="vertical"
         android:visibility="gone">
 
