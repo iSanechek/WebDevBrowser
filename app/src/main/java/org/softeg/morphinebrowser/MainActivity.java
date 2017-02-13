@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         View view = findViewById(R.id.log_fragment_container);
                         view.setVisibility(args.get(0) ? View.VISIBLE : View.GONE);
                         if (args.get(0)) {
+                            findViewById(R.id.bord).setVisibility(View.VISIBLE);
                             view.setVisibility(View.VISIBLE);
                             logFragment = new LogFragment();
                             getSupportFragmentManager()
@@ -80,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                                     .commit();
                         } else {
                             view.setVisibility(View.GONE);
+                            findViewById(R.id.bord).setVisibility(View.GONE);
                             if (logFragment != null) {
                                 getSupportFragmentManager()
                                         .beginTransaction()
