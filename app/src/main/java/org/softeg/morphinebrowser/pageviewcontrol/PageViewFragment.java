@@ -82,12 +82,24 @@ public class PageViewFragment extends Fragment implements View.OnClickListener, 
 
         mWebView = (AppWebView) v.findViewById(R.id.webView);
         int webViewWidthFromPref = AppPreferences.getPageWidthSize();
-        log("Web Fragment", "get Pref Page Width Size: " + webViewWidthFromPref);
-        if (webViewWidthFromPref != 0) {
-            RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(webViewWidthFromPref, RelativeLayout.LayoutParams.MATCH_PARENT);
-            rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
+        int webViewHeightFromPref = AppPreferences.getPageHeightSize();
+        if (webViewHeightFromPref != 0) {
+            RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(
+                    webViewWidthFromPref != 0 ? webViewWidthFromPref : RelativeLayout.LayoutParams.MATCH_PARENT,
+                    webViewHeightFromPref
+            );
+            rl_lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
             mWebView.setLayoutParams(rl_lp);
         }
+
+        if (webViewWidthFromPref != 0) {
+            RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(
+                    webViewWidthFromPref,
+                    webViewHeightFromPref != 0 ? webViewHeightFromPref : RelativeLayout.LayoutParams.MATCH_PARENT
+            );
+            mWebView.setLayoutParams(rl_lp);
+        }
+
         mWebView.getSettings().setDefaultFontSize(AppPreferences.getWebViewFontSize());
         mWebView.initTopicPageWebView();
         if(autoHideActionBar())

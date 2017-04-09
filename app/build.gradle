@@ -13,8 +13,8 @@ android {
         applicationId "org.softeg.morphinebrowser"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 48
-        versionName "1.3.5.8"
+        versionCode 55
+        versionName "1.3.5.9"
         vectorDrawables.useSupportLibrary = true
         project.ext.set("archivesBaseName", "WDB-" + defaultConfig.versionName)
     }
@@ -28,15 +28,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors {
-        t {
-            applicationId 'org.softeg.morphinebrowser.test'
-        }
 
-        rel {
-            applicationId 'org.softeg.morphinebrowser'
-        }
-    }
     signingConfigs {
         release {
             storeFile file("release.keystore.jks")

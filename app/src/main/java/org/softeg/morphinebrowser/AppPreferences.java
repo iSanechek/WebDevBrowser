@@ -20,6 +20,14 @@ public class AppPreferences {
         App.getInstance().getPreferences().edit().putInt("WebView.PageWidth", value).apply();
     }
 
+    public static int getPageHeightSize() {
+        return App.getInstance().getPreferences().getInt("WebView.PageHeight", 0);
+    }
+
+    public static void setPageHeightSize(int value) {
+        App.getInstance().getPreferences().edit().putInt("WebView.PageHeight", value).apply();
+    }
+
     public static int getCacheMode() {
         return App.getInstance().getPreferences().getInt("WebView.CacheMode", 1);
     }

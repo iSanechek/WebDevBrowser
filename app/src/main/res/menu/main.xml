@@ -24,7 +24,13 @@
         android:title="@string/scr_w"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_crop_free_white_24dp"/>
+        android:icon="@drawable/ic_crop_landscape_white_24dp"/>
+
+    <item android:id="@+id/action_height"
+          android:title="@string/scr_h"
+          android:orderInCategory="100"
+          app:showAsAction="ifRoom"
+          android:icon="@drawable/ic_crop_portrait_white_24dp"/>
 
     <item android:id="@+id/action_outline"
         android:title="@string/elements_outline"

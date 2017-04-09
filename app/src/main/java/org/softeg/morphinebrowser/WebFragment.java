@@ -16,7 +16,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.EditText;
@@ -90,7 +89,7 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             showFontSizeDialog();
             return true;
         } else if (id == R.id.action_width) {
-            showWidthDialog();
+            showHeightWidthDialog(false);
             return true;
         } else if (id == R.id.action_close) {
             getActivity().finish();
@@ -121,70 +120,68 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
                 FastEvent.emit(Constants.SHOW_LOG_FRAGMENT, false);
             }
             return true;
+        } else if (id == R.id.action_height) {
+            showHeightWidthDialog(true);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private void showWidthDialog() {
-        View v = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
-        FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.scr_w));
-        if (AppPreferences.isFirstStart()) {
-            showWarningDialog();
-        }
-
-        assert v != null;
-
-        Display display = getActivity().getWindowManager().getDefaultDisplay();
+    private void showHeightWidthDialog(final boolean isHeight) {
+        final View view = getActivity().getLayoutInflater().inflate(R.layout.font_size_dialog, null);
+        FastEvent.emit(Constants.TOOLBAR_TITLE, isHeight ? getString(R.string.scr_h) : getString(R.string.scr_w));
+        if (AppPreferences.isFirstStart()) { showWarningDialog(); }
+        assert view != null;
+        final Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int screenHeight = 0;
+        int screenWidth = 0;
+        int webViewWidth = 0;
+        int webViewHeight = 0;
         Point size = new Point();
         display.getSize(size);
-        int screenWidth = size.x;
-
-        int webViewWidth = getWebView().getMeasuredWidth();
-        log("Web Fragment", "get Pref Page Width Size Result: " + webViewWidth);
-        final DiscreteSeekBar sb = (DiscreteSeekBar) v.findViewById(R.id.value_seek_bar);
-
-        sb.setMax(screenWidth);
-        sb.setProgress(webViewWidth);
-
-        final EditText editText = (EditText) v.findViewById(R.id.value_text);
+        if (isHeight) {
+            screenHeight = size.y;
+            webViewHeight = getWebView().getMeasuredHeight();
+        } else {
+            screenWidth = size.x;
+            webViewWidth = getWebView().getMeasuredWidth();
+        }
+        final DiscreteSeekBar sb = (DiscreteSeekBar) view.findViewById(R.id.value_seek_bar);
+        if (isHeight) {
+            sb.setMax(screenHeight);
+            sb.setProgress(webViewHeight);
+        } else {
+            sb.setMax(screenWidth);
+            sb.setProgress(webViewWidth);
+        }
+        final EditText editText = (EditText) view.findViewById(R.id.value_text);
         editText.setText((sb.getProgress()) + "");
-
-
-        v.findViewById(R.id.button_minus).setOnClickListener(new View.OnClickListener() {
+        final int finalScreenHeight = screenHeight;
+        view.findViewById(R.id.button_minus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (sb.getProgress() > 0) {
                     int i = sb.getProgress() - 1;
-
                     sb.setProgress(i);
-                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT);
-                    rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-                    getWebView().setLayoutParams(rl_lp);
-                    rl_lp = null;
+                    setLLParams(isHeight, i, view, finalScreenHeight);
                     editText.setText((i) + "");
                 }
             }
         });
-        v.findViewById(R.id.button_plus).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_plus).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (sb.getProgress() < sb.getMax()) {
                     int i = sb.getProgress() + 1;
-
                     sb.setProgress(i);
-                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(i, RelativeLayout.LayoutParams.MATCH_PARENT);
-                    rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-                    getWebView().setLayoutParams(rl_lp);
-                    rl_lp = null;
+                    setLLParams(isHeight, i, view, finalScreenHeight);
                     editText.setText((i) + "");
                 }
             }
         });
         editText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
@@ -195,20 +192,14 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-            }
+            public void afterTextChanged(Editable s) {}
         });
-
-
         sb.setOnProgressChangeListener(new DiscreteSeekBar.OnProgressChangeListener() {
             @Override
             public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
                 try {
-                    RelativeLayout.LayoutParams rl_lp = new RelativeLayout.LayoutParams(value, RelativeLayout.LayoutParams.MATCH_PARENT);
-                    rl_lp.addRule(RelativeLayout.CENTER_IN_PARENT);
-                    getWebView().setLayoutParams(rl_lp);
+                    setLLParams(isHeight, value, view, finalScreenHeight);
                     progressValueWidtPage = value;
-                    rl_lp = null;
                     editText.setText((value) + "");
                 } catch (Throwable ex) {
                     AppLog.e(getActivity(), ex);
@@ -216,29 +207,43 @@ public class WebFragment extends PageFragment /*implements FileChooserDialog.Fil
             }
 
             @Override
-            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {
-
-            }
+            public void onStartTrackingTouch(DiscreteSeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {
-
-            }
+            public void onStopTrackingTouch(DiscreteSeekBar seekBar) {}
         });
-
         BottomSheetDialog dialog = new BottomSheetDialog(getActivity());
-        dialog.setContentView(v);
+        dialog.setContentView(view);
         dialog.show();
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
                 FastEvent.emit(Constants.TOOLBAR_TITLE, getString(R.string.app_name));
-                AppPreferences.setPageWidthSize(progressValueWidtPage);
-                log("Web Fragment", "Save Page Width Size: " + progressValueWidtPage);
+                if (isHeight) { AppPreferences.setPageHeightSize(progressValueWidtPage); }
+                else { AppPreferences.setPageWidthSize(progressValueWidtPage); }
             }
         });
         editText.selectAll();
         editText.requestFocus();
+    }
+
+    private void setLLParams(boolean isHeight, int size, View view, int displaySize) {
+        RelativeLayout.LayoutParams rl_lp;
+        int webViewWidthFromPref = AppPreferences.getPageWidthSize();
+        int webViewHeightFromPref = AppPreferences.getPageHeightSize();
+        if (isHeight) {
+            rl_lp = new RelativeLayout.LayoutParams(
+                    webViewWidthFromPref != 0 ? webViewWidthFromPref : RelativeLayout.LayoutParams.MATCH_PARENT,
+                    size
+            );
+            rl_lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
+        } else {
+            rl_lp = new RelativeLayout.LayoutParams(
+                    size,
+                    webViewHeightFromPref != 0 ? webViewHeightFromPref : RelativeLayout.LayoutParams.MATCH_PARENT
+            );
+        }
+        getWebView().setLayoutParams(rl_lp);
     }
 
     private void showAboutDialog() {

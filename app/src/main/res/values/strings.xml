@@ -21,6 +21,7 @@
     <string name="refresh">Обновить</string>
     <string name="fontsize">Размер шрифта</string>
     <string name="scr_w">Ширина экрана</string>
+    <string name="scr_h">Высота экрана</string>
     <string name="save">Сохранить</string>
     <string name="get_content">Выбрать файл</string>
     <string name="cache_settings">Настройки кеша</string>
